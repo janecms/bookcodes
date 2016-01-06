@@ -1,0 +1,69 @@
+Recipe : Basic sed primer
+
+Substitution(Replacement) with sed
+==================================
+$ sed 's/pattern/replace_string/' file
+
+$ cat file | sed 's/pattern/replace_string/' file
+
+Saving changes in file
+======================
+$ sed 's/text/replace/' file > newfile
+$ mv newfile file
+
+$ sed -i 's/text/replace/' file
+
+
+Global substitution
+===================
+$ sed 's/pattern/replace_string/g' file
+
+$ echo this this this this | sed 's/this/THIS/2g' 
+this THIS THIS THIS 
+
+$ echo this this this this | sed 's/this/THIS/3g' 
+this this THIS THIS 
+
+$ echo this this this this | sed 's/this/THIS/4g' 
+this this this THIS 
+
+sed delimiters
+==============
+$ sed 's:text:replace:g'
+$ sed 's|text|replace|g'
+
+delimiter in pattern
+====================
+sed 's|te\|xt|replace|g' 
+
+
+Removing blank lines
+====================
+$ sed '/^$/d' file 
+
+
+Matched string notation
+=======================
+$ echo this is an example | sed 's/\w\+/[&]/g' 
+[this] [is] [an] [example]
+
+
+Substring match notation (\1)
+=============================
+$ echo this is digit 7 in a number | sed 's/digit \([0-9]\)/\1/' 
+this is 7 in a number
+
+$ echo seven EIGHT | sed 's/\([a-z]\+\) \([A-Z]\+\)/\2 \1/' 
+EIGHT seven 
+
+
+Double quotes in sed
+====================
+$ text=hello
+$ echo hello world | sed "s/$text/HELLO/" 
+HELLO world 
+
+
+
+
+

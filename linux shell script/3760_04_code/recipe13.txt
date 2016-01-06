@@ -1,0 +1,24 @@
+Recipe: Checking palindrome strings with script
+
+
+Backreference in sed
+====================
+$ sed -n '/\(.\)\1/p' filename
+
+
+Palindrome check using rev
+===========================
+string="malayalam"
+if [[ "$string" == "$(echo $string | rev )" ]];
+then
+	echo "Palindrome"
+else
+	echo "Not palindrome"
+fi
+
+
+
+Scripts
+=======
+
+match_palindrome.sh

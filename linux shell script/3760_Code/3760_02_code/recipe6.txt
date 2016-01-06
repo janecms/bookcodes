@@ -1,0 +1,30 @@
+Recipe: Checksum and verification
+
+md5sum
+======
+$ md5sum filename
+#It generates 32 character string like 68b329da9893e34099c7d8ad5cb9c940 filename
+
+$ md5sum filename > file_sum.md5
+
+$ md5sum file1 file2 file3
+b1946ac92492d2347c6235b4d2611184  file1
+b1946ac92492d2347c6235b4d2611184  file2
+b1946ac92492d2347c6235b4d2611184  file3
+
+$ md5sum -c file_sum.md5
+# It will output message whether checksum matches or not
+
+md5deep
+=======
+
+$ md5deep -rl directory_path > directory.md5
+# -r  for enable recursive.
+$ -l for using relative path. By default it writes absolute file path in output
+
+$ find directory_path -type f -print0 | xargs -0 md5sum >> directory.md5
+#Alternate method
+
+
+
+

@@ -1,0 +1,48 @@
+Recipe: Counting No of lines, words, characters in a file 
+
+Counting the number of lines
+============================
+
+$ seq 15 > file
+$ wc -l file
+15 file
+
+Counting the number of lines from stdin
+=======================================
+
+$ cat file | wc -l
+15
+
+Counting the number of words
+=============================
+$ echo 'hello how are you' > text
+$ wc -w text
+4 file
+
+$ cat text | wc -w
+4
+
+Counting number of characters
+=============================
+
+$ wc -c text
+18 text
+
+$ cat text | wc -c
+18
+
+$ echo -n 1234 | wc -c
+4
+
+$ wc text
+ 1  4 18 text
+
+Print length of longest length line
+====================================
+
+$ seq 15 >file
+$ wc file -L
+2 file
+
+
+

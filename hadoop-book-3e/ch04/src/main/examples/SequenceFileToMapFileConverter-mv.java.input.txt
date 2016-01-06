@@ -1,1 +1,0 @@
-hadoop fs -mv numbers.map/part-00000 numbers.map/data

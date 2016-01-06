@@ -1,0 +1,17 @@
+Recipe: Monitoring command outputs with watch
+
+$ watch COMMAND
+Eg:
+$ watch ls
+or
+$ watch 'COMMANDS'
+Eg:
+$ watch 'ls -l | grep “^d”' 
+# list only directories
+
+$ watch -n 5 'ls -l'
+#Monitor the output of ls -l at regular intervals of 5 seconds
+
+Highlighting differences
+========================
+$ watch -d 'COMMANDS'

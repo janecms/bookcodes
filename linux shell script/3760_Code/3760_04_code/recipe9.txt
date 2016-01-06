@@ -1,0 +1,26 @@
+Recipe: Iterating through line, word, character in a file
+
+Iterate through each line
+=========================
+
+while read line;
+do
+	echo $line;
+done < file.txt
+
+
+Iterate through each word in a line
+===================================
+
+for word in $line;
+do
+	echo $word;
+done
+
+Iterate through each character in a word
+========================================
+s
+for((i=0;i<${#word};i++))
+do
+		echo ${word:i:1} ;
+done

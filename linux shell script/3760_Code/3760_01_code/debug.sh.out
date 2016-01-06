@@ -1,0 +1,21 @@
+$ ./debug.sh 
++ echo 1
+1
++ set +x
++ echo 2
+2
++ set +x
++ echo 3
+3
++ set +x
++ echo 4
+4
++ set +x
++ echo 5
+5
++ set +x
++ echo 6
+6
++ set +x
+Script executed
+

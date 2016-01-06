@@ -1,0 +1,2 @@
+$ ./silent_grep.sh Student student_data.txt 
+The text exists in the file 

@@ -1,0 +1,46 @@
+Recipe:Printing directory tree 
+
+Create filesystem tree
+========================
+
+$ tree unixfs
+unixfs/
+|-- bin 
+|   |-- cat 
+|   `-- ls 
+|-- etc 
+|   `-- passwd 
+|-- home 
+|   |-- pactpub 
+|   |   |-- automate.sh 
+|   |   `-- schedule 
+|   `-- slynux 
+|-- opt 
+|-- tmp 
+`-- usr 
+8 directories, 5 files 
+
+Highlight files matched by pattern
+===================================
+
+
+$ tree path -P PATTERN # Pattern should be wildcard
+Eg:
+$ tree path -P "*.sh"
+|-- home 
+|   |-- pactpub 
+|   |   `-- automate.sh 
+
+Highlight files excluding pattern
+=================================
+
+$ tree path -I PATTERN
+
+Print size along with files
+==============================
+
+$ tree -h
+
+HTML output for tree
+====================
+$ tree unixfs -H http://localhost -o unixfs/out.html 

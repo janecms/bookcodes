@@ -1,0 +1,32 @@
+Recipe: Generating blank files in bulk
+
+Creating blank files
+=====================
+
+$ touch filename
+# A blank file with name filename will be created
+
+#generate blank files with different name patterns
+
+$ for name in {1..10}.txt
+> do
+> touch $name;
+> done
+
+$ ls | head
+10.txt
+1.txt
+2.txt
+3.txt
+4.txt
+5.txt
+6.txt
+7.txt
+8.txt
+9.txt
+
+
+Setting the timestamp
+=====================
+
+$ touch -d "Fri Jun 25 20:50:14 IST 1999" filename

@@ -1,0 +1,21 @@
+Recipe: Merging multiple files as columns
+
+$ cat paste1.txt
+1
+2
+3
+4
+5
+
+$ cat paste2.txt
+slynux 
+gnu 
+bash 
+hack 
+
+$ paste paste1.txt paste2.txt 
+1	slynux 
+2	gnu 
+3	bash 
+4	hack 
+5	

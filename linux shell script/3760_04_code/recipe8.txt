@@ -1,0 +1,51 @@
+Recipe: Compressing/decompressing JavaScript
+
+$ cat sample.js
+function sign_out() 
+{ 
+
+	$("#loading").show(); 
+	$.get("log_in",{logout:"True"}, 
+	 
+	function(){ 
+
+		window.location=""; 
+		 
+	}); 
+	 
+
+}
+
+
+Compressing javascript
+======================
+
+$ cat sample.js |  \
+tr -d '\n\t' |  tr -s ' ' \
+| sed 's:/\*.*\*/::g' \
+| sed 's/ \?\([{}();,:]\) \?/\1/g' 
+
+function sign_out(){$("#loading").show();$.get("log_in",{logout:"True"},function(){window.location="";});}
+
+
+
+$ cat obfuscated.txt | sed 's/;/;\n/g; s/{/{\n\n/g; s/}/\n\n}/g' 
+or
+$ cat obfuscated.txt | sed 's/;/;\n/g' | sed 's/{/{\n\n/g' | sed 's/}/\n\n}/g' 
+
+$ cat obfuscated.txt | sed 's/;/;\n/g; s/{/{\n\n/g; s/}/\n\n}/g' 
+function sign_out(){
+
+$("#loading").show();
+$.get("log_in",{
+
+logout:"True"
+
+},function(){
+
+window.location="";
+
+
+});
+
+

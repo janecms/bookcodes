@@ -1,1 +1,0 @@
-hadoop SortDataPreprocessor input/ncdc/micro output

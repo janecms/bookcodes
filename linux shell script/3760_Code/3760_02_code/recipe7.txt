@@ -1,0 +1,117 @@
+Recipe: Sort, Unique and duplicates
+
+sort
+====
+$ sort file1.txt file2.txt .. > sorted.txt
+
+$ sort file1.txt file2.txt .. -o sorted.txt
+
+$ sort -n file.txt
+#Numerical sort
+
+$ sort -r file.txt
+#Reverse
+
+$ sort -M months.txt
+#Month sort
+
+
+$ sort -m sorted1 sorted2
+#Merge sorted files
+
+Sort on keys or columns
+=======================
+$ cat data.txt
+1	mac		2000
+2	winxp		4000
+3	bsd		1000
+4	linux		1000
+
+$ sort -nrk 1  data.txt
+4	linux		1000 
+3	bsd		1000 
+2	winxp		4000 
+1	mac		2000 
+# -nr means numeric and reverse
+
+
+# Sort by column 2
+$ sort -k 2  data.txt
+3	bsd		1000 
+4	linux		1000 
+1	mac		2000 
+2	winxp		4000
+
+
+$ cat data2.txt
+1010hellothis
+2189ababbba
+7464dfddfdfd
+
+$ sort -nk 2,3 data2.txt
+
+$ sort -nk 1,1 data2.txt
+
+$ sort -z data2.txt | xargs -0 command
+#Zero terminator is used to make safe use with xargs
+
+$ sort -bd unsorted.txt
+#Ignore folds and leading spaces
+
+
+uniq
+====
+$ cat sorted.txt
+bash 
+foss 
+hack 
+hack
+
+$ uniq sorted.txt
+bash 
+foss 
+hack 
+
+$ sort unsorted.txt | uniq
+
+$ sort -u unsorted.txt
+
+$ uniq -u sorted.txt
+bash 
+foss 
+
+
+$ sort unsorted.txt | uniq -u
+
+$ sort unsorted.txt | uniq -c
+      1 bash 
+      1 foss 
+      2 hack 
+#Count occurance
+
+$ sort unsorted.txt  | uniq -d
+hack
+#Duplicate
+
+Key for comparison
+==================
+
+$ cat data3.txt
+u:01:gnu 
+d:04:linux 
+u:01:bash 
+u:01:hack
+
+$ sort data3.txt | uniq -s 2 -w 2
+d:04:linux 
+u:01:bash 
+
+$ uniq -z file.txt
+#Zero termination
+
+
+
+
+Scripts
+=======
+sort.sh

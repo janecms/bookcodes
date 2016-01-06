@@ -1,0 +1,28 @@
+Recipe: Concatenate with cat
+
+
+cat
+===
+$ cat file1 file2 file3 ..
+# Provides concatenation of many files provided in argument as output
+
+
+$ echo 'Text through stdin' | cat - file
+# - acts as filename for stdin text
+
+Squeeze blank
+=============
+$ cat -s file
+
+$ cat file | tr -s '\n'
+
+Display tab
+===========
+$ cat -T file.py
+
+Line numbers
+============
+$ cat -n file.txt
+
+
+

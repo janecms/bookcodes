@@ -1,0 +1,38 @@
+Recipe: Cloning hard drive and disks with dd
+
+SYNTAX:
+$ dd if=SOURCE of=TARGET bs=BLOCK_SIZE count=COUNT
+
+if stands for input file or input device path
+of stands for target file or target device path
+Total bytes copied = BLOCK_SIZE * COUNT
+
+Copy a partition into a file
+===============================
+# dd if=/dev/sda1 of=sda1_partition.img 
+Here /dev/sda1 is the device path for the partition. 
+
+Restore the partition later on using the backup image of the parition.
+# dd if=sda1_partition.img of=/dev/sda1 
+
+
+Clone one hard disk to another hard disk of same size
+=====================================================
+
+# dd if=/dev/sda  of=/dev/sdb
+
+# /dev/sdb ( Second hard disk)
+
+
+Take image of a cdrom (ISO file)
+================================
+# dd if=/dev/cdrom of=cdrom.iso 
+
+
+Mounting image files
+====================
+
+# mkdir /mnt/mount_point
+# mount -o loop file.img /mnt/mount_point
+
+

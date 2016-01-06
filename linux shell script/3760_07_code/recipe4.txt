@@ -1,0 +1,46 @@
+Recipe: Transferring files through network
+
+FTP ( File Transfer Protocol)
+=============================
+$ lftp username@ftp.domain_name
+
+lftp ftp.domain_name:/>
+
+lftp ftp.domain_name:/> get filename
+
+
+lftp ftp.domain_name:/> put filename
+
+lftp ftp.domain_name:/> quit
+
+
+SFTP( Secure FTP)
+=================
+$ sftp user@domainname
+
+$ sftp -oPort=422 user@slynux.org
+
+SCP (Secure Copy)
+=================
+
+$ scp filename user@remotehost:/home/path
+
+$ scp SOURCE DESTINATION
+SOURCE or DESTINATION can be in format username@localhost:/path
+
+
+$ scp user@remotehost:/home/path/filename filename
+
+Recursive copy
+==============
+$ scp -r /home/slynux user@remotehost:/home/backups
+
+Preserve permissions
+====================
+$ scp -rp /home/slynux user@remotehost:/home/backups 
+
+
+
+
+Scripts:
+ftp.sh

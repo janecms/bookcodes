@@ -1,0 +1,5 @@
+$ sudo ./superuser.sh
+Root user
+
+$ ./superuser.sh
+Non root user. Please run as root.

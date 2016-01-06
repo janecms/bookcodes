@@ -1,0 +1,6 @@
+$ ./image_help.sh -source sample_dir -percent 20%
+Processing file : sample/IMG_4455.JPG
+Processing file : sample/IMG_4456.JPG
+Processing file : sample/IMG_4457.JPG
+Processing file : sample/IMG_4458.JPG
+

@@ -1,0 +1,7 @@
+Recipe : Freqency of words used in a given file
+
+
+
+Scripts
+=======
+word_freq.sh

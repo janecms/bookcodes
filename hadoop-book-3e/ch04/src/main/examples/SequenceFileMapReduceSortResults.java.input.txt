@@ -1,1 +1,0 @@
-hadoop fs -text sorted/part-00000 | head

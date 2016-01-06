@@ -1,0 +1,50 @@
+Recipe: Translate with tr
+
+tr
+==
+$ echo "HELLO WHO IS THIS" | tr 'A-Z' 'a-z'
+
+
+Crypts
+======
+$ echo  12345 | tr '0-9' '9876543210'
+3365 #Encrypted
+
+$ echo 3365 | tr '9876543210' '0-9'
+12345 #Decrypted
+
+Tab to space
+============
+$ cat text |  tr '\t' ' '
+
+Complementing
+=============
+
+$ cat text | tr -d -c 'a-z'
+# Removes all except lower-case alphabets from the input
+
+Deleting characters from input
+==============================
+$ echo "Hello 123 world 456' | tr -d '0-9'
+Hello  world
+
+Squeeze repeated
+================
+$ echo "GNU is       not     UNIX. Recursive   right ?' | tr -s ' '
+GNU is not UNIX. Recursive right ?
+# tr -s '[set]'
+
+tr sum hack
+===========
+$ cat sum.txt
+1
+2
+3
+4
+5
+
+$ cat sum.txt | echo $[ $(tr '\n' '+' ) 0 ]
+15
+
+
+

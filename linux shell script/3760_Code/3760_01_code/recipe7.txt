@@ -1,0 +1,40 @@
+Recipe: Grabbing information about terminal
+
+Read No of columns and lines
+============================
+COLUMNS=`tput cols`
+LINES=`tput lines`
+
+$ tput longname
+X11 terminal emulator
+
+Move cursor to a position 100,100
+=================================
+$ tput cup 100 100
+
+Set background color for terminal
+=================================
+$ tput setb no
+#no → 0 – 7
+
+Set forground color for text
+============================
+$ tput setf no
+#no → 0-7
+
+Make text bold
+==============
+$ tput bold
+
+Start and end underline
+=======================
+tput smul
+tput rmul
+
+Delete from cursor to end of line
+=================================
+tput ed
+
+Scripts
+=======
+password.sh

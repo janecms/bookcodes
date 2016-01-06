@@ -1,0 +1,123 @@
+Recipe: Gathering information about processes
+
+ps
+==
+$ ps
+  PID TTY          TIME CMD
+ 1220 pts/0    00:00:00 bash
+ 1242 pts/0    00:00:00 ps
+
+
+$ ps -f
+UID        PID  PPID  C STIME TTY          TIME CMD
+slynux    1220  1219  0 18:18 pts/0    00:00:00 -bash
+slynux    1587  1220  0 18:59 pts/0    00:00:00 ps -f
+
+
+$ ps -e | head
+  PID TTY          TIME CMD
+    1 ?        00:00:00 init
+    2 ?        00:00:00 kthreadd
+    3 ?        00:00:00 migration/0
+    4 ?        00:00:00 ksoftirqd/0
+    5 ?        00:00:00 watchdog/0
+    6 ?        00:00:00 events/0
+    7 ?        00:00:00 cpuset
+    8 ?        00:00:00 khelper
+    9 ?        00:00:00 netns
+
+ps - custom fields
+==================
+$ ps -eo comm,pcpu | head
+COMMAND         %CPU
+init             0.0
+kthreadd         0.0
+migration/0      0.0
+ksoftirqd/0      0.0
+watchdog/0       0.0
+events/0         0.0
+cpuset           0.0
+khelper          0.0
+netns            0.0
+
+syntax:
+=======
+$ ps [OPTIONS] --sort -paramter1,+parameter2,parameter3..
+
+Top 10 CPU consuming processes
+==============================
+$ ps -eo comm,pcpu --sort -pcpu | head
+COMMAND         %CPU
+Xorg             0.1
+hald-addon-stor  0.0
+ata/0            0.0
+scsi_eh_0        0.0
+gnome-settings-  0.0
+init             0.0
+hald             0.0
+pulseaudio       0.0
+gdm-simple-gree  0.0
+
+Details of processes 'bash'
+============================
+$ ps -eo comm,pid,pcpu,pmem | grep bash
+bash             1255  0.0  0.3
+bash             1680  5.5  0.3
+
+pgrep
+=====
+$ pgrep bash
+1255
+1680
+
+Delimitor with pgrep
+====================
+$ pgrep COMMAND -d DELIMITER_STRING
+$ pgrep bash -d “:”
+1255:1680
+
+Filter by users with pgrep
+==========================
+$ pgrep -u root,slynux COMMAND
+
+Count matching processes
+========================
+$ pgrep -c COMMAND
+
+Filter real and effective user on ps command
+============================================
+$ ps -u root -U root -o user,pcpu
+
+Filter by TTY
+=============
+$ ps -t pts/0,pts/1
+  PID TTY          TIME CMD
+ 1238 pts/0    00:00:00 bash
+ 1835 pts/1    00:00:00 bash
+ 1864 pts/0    00:00:00 ps
+
+
+Display details of threads with ps
+==================================
+$ ps -eLf --sort -nlwp | head
+UID        PID  PPID   LWP  C NLWP STIME TTY          TIME CMD
+root       647     1   647  0   64 14:39 ?        00:00:00 /usr/sbin/console-kit-daemon --no-daemon
+root       647     1   654  0   64 14:39 ?        00:00:00 /usr/sbin/console-kit-daemon --no-daemon
+root       647     1   656  0   64 14:39 ?        00:00:00 /usr/sbin/console-kit-daemon --no-daemon
+root       647     1   657  0   64 14:39 ?        00:00:00 /usr/sbin/console-kit-daemon --no-daemon
+root       647     1   658  0   64 14:39 ?        00:00:00 /usr/sbin/console-kit-daemon --no-daemon
+root       647     1   659  0   64 14:39 ?        00:00:00 /usr/sbin/console-kit-daemon --no-daemon
+root       647     1   660  0   64 14:39 ?        00:00:00 /usr/sbin/console-kit-daemon --no-daemon
+root       647     1   662  0   64 14:39 ?        00:00:00 /usr/sbin/console-kit-daemon --no-daemon
+root       647     1   663  0   64 14:39 ?        00:00:00 /usr/sbin/console-kit-daemon --no-daemon
+
+List environment variables associated with process
+==================================================
+$ ps -eo cmd e
+$ ps -eo pid,cmd  e | tail -n 3
+ 1162 hald-addon-acpi: listening on acpid socket /var/run/acpid.socket
+ 1172 sshd: slynux [priv]
+ 1237 sshd: slynux@pts/0
+ 1238 -bash USER=slynux LOGNAME=slynux HOME=/home/slynux PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games MAIL=/var/mail/slynux SHELL=/bin/bash SSH_CLIENT=10.211.55.2 49277 22 SSH_CONNECTION=10.211.55.2 49277 10.211.55.4 22 SSH_TTY=/dev/pts/0 TERM=xterm-color LANG=en_IN XDG_SESSION_COOKIE=d1e96f5cc8a7a3bc3a0a73e44c95121a-1286499339.592429-1573657095
+
+

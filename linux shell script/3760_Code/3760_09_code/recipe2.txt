@@ -1,0 +1,36 @@
+Recipe: Killing process and send, trap signals
+
+List signals
+============
+$ kill -l
+
+Terminate a process
+===================
+$ kill PROCESS_ID_LIST 
+
+Send a signal to a process
+==========================
+$ kill -s SIGNAL PID
+
+killall
+=======
+
+$ killall process_name
+
+$ killall -s SIGNAL process_name
+
+Force kill
+==========
+$ killall -9 process_name
+
+$ killall -u USERNAME process_name
+
+pkill
+=====
+$ pkill process_name
+
+$ pkill -s SIGNAL process_name
+
+Script
+======
+sighandle.sh

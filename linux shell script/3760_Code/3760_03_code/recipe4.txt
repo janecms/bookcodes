@@ -1,0 +1,20 @@
+Recipe: Making directories for a long path
+
+Making directories
+==================
+
+$ mkdir dirpath 
+
+Checking for existing directories
+=================================
+
+if  [ -e /home/slynux ]; then
+	# Create next level directory
+fi
+
+Creating directories as a tree at different levels
+==================================================
+
+$ mkdir -p /home/slynux/test/hello/child
+
+

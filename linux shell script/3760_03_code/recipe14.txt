@@ -1,0 +1,60 @@
+Recipe: Listing only directories  – alternative methods 
+
+$ ls -d */
+
+Desktop/    Downloads/  Music/     Public/     Videos/
+Documents/  images/     Pictures/  Templates/  webapps/
+
+$ ls -F | grep "/$
+Desktop/
+Documents/
+Downloads/
+images/
+Music/
+Pictures/
+Public/
+Templates/
+Videos/
+webapps/
+
+$ls -l | grep "^d"
+drwxr-xr-x 4 slynux slynux 4096 2010-07-05 22:50 Desktop
+drwxr-xr-x 2 slynux slynux 4096 2010-06-29 18:39 Documents
+drwxr-xr-x 3 slynux slynux 4096 2010-07-05 22:46 Downloads
+drwxr-xr-x 2 slynux slynux 4096 2010-07-04 08:07 images
+drwxr-xr-x 2 slynux slynux 4096 2010-06-29 18:39 Music
+drwxr-xr-x 2 slynux slynux 4096 2010-06-29 18:39 Pictures
+drwxr-xr-x 2 slynux slynux 4096 2010-06-29 18:39 Public
+drwxr-xr-x 2 slynux slynux 4096 2010-06-29 18:39 Templates
+drwxr-xr-x 2 slynux slynux 4096 2010-06-29 18:39 Videos
+drwxr-xr-x 2 slynux slynux 4096 2010-07-05 15:35 webapps
+
+$ find . -type d -maxdepth 1 -print
+.
+./.openoffice.org
+./.nautilus
+./Public
+./.gnome2_private
+./.thumbnails
+./Music
+./.gnome2
+./Desktop
+./.gconf
+./.cache
+./webapps
+./Videos
+./.update-notifier
+./.gvfs
+./.pulse
+./Templates
+./.gconfd
+./Documents
+./.local
+./.config
+./.compiz
+./.mozilla
+./images
+./.gstreamer-0.10
+./Downloads
+
+

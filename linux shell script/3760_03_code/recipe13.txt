@@ -1,0 +1,136 @@
+Recipe: head and tail -  Printing last/first 10 lines
+
+
+$ cat file
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+
+Print first 10 lines
+=======================
+
+$ head file
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+
+Read data from stdin
+=========================
+
+$ cat file | head
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+Specify number of first lines to be printed
+==============================================
+
+$ head -n 4 file
+1 
+2
+3
+4
+
+Print all lines excluding last N lines
+=======================================
+
+$ head -n -N file
+
+$ seq 100 | head -n 5
+
+1
+2
+3
+4
+5
+
+$ tail file
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+
+$ cat file | tail
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+
+$ tail -n 5 file
+11
+12
+13
+14
+15
+
+$ seq 10 | tail -n +6 
+6
+7
+8
+9
+10
+
+Follow the growth of growing files
+======================================
+
+$ tail -f growing_file
+
+$i dmesg |tail -f
+[ 8521.838740] ata1: exception Emask 0x10 SAct 0x0 SErr 0x50000 action 0xe frozen
+[ 8521.838746] ata1: irq_stat 0x00400000, PHY RDY changed
+[ 8521.838751] ata1: SError: { PHYRdyChg CommWake }
+[ 8521.838759] ata1: hard resetting link
+[ 8522.552189] ata2: SATA link up 1.5 Gbps (SStatus 113 SControl 300)
+[ 8522.557500] ata2.00: configured for UDMA/100
+[ 8522.558602] ata2: EH complete
+[ 8522.560144] ata1: SATA link up 3.0 Gbps (SStatus 123 SControl 300)
+[ 8522.588950] ata1.00: configured for UDMA/133
+[ 8522.588960] ata1: EH complete
+
+
+Terminate after a given process ID dies.
+===========================================
+
+$ PID=$(pidof Foo)
+$ tail -f file –pid PID
+
+

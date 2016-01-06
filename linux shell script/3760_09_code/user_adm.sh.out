@@ -1,0 +1,14 @@
+# ./user_adm.sh -details test
+Login: test           			Name: 
+Directory: /home/test               	Shell: /bin/sh
+Last login Tue Dec 21 00:07 (IST) on pts/1 from localhost
+No mail.
+No Plan.
+Last password change					: Dec 20, 2010
+Password expires					: never
+Password inactive					: never
+Account expires						: Oct 10, 2010
+Minimum number of days between password change		: 0
+Maximum number of days between password change		: 99999
+Number of days of warning before password expires	: 7
+

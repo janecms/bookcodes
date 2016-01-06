@@ -1,0 +1,27 @@
+Recipe: Reading n characters without Return press
+
+Read 2 characters with out Return as delimitor
+==============================================
+$ read -n 2 var
+$ echo $var
+
+
+Read password in non-echo mode
+==============================
+read -s var
+
+
+Read variable with timeout 5 sec condition
+==========================================
+read -t 5 var
+
+Read variable with input delimitor ":" specified
+============================================
+$ read -d : var
+hello:
+$ echo $var
+hello
+
+
+
+

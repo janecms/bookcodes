@@ -1,0 +1,29 @@
+Recipe: Printing text between line numbers/patterns
+
+Print lines from line number M to N
+===================================
+$ awk 'NR==M, NR==N' filename
+
+$ seq 100 | awk 'NR==4,NR==6' 
+4 
+5 
+6 
+
+
+Print lines between two pattern matches
+=======================================
+$ awk '/start_pattern/, /end _pattern/' filename
+
+$ cat section.txt 
+line with pattern1 
+line with pattern2 
+line with pattern3 
+line end with pattern4 
+line with pattern5 
+
+$ awk '/pa.*3/, /end/' section.txt 
+line with pattern3 
+line end with pattern4
+#It supports regular expression patterns
+
+

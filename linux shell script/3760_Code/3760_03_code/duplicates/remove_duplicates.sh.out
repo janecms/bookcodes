@@ -1,0 +1,7 @@
+$ ./remove_duplicates.sh 
+Removing..
+duplicate_files
+remove_duplicates.sh.out
+test
+test_copy1
+Removed duplicates files successfully.

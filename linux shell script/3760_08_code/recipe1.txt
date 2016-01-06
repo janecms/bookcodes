@@ -1,0 +1,129 @@
+Recipe: Disk usage hacks
+
+Syntax:
+$ du FILENAME1 FILENAME2 ..
+
+eg:
+$ du file.txt
+4
+
+Display disk usage for all files and folders recursively
+========================================================
+du -a DIRECTORY
+
+eg:
+$  du -a test
+4	test/output.txt
+4	test/process_log.sh
+4	test/pcpu.sh
+16	test
+
+$ du test
+16 test
+
+Display disk usage in KB, MB or Blocks
+======================================
+du -h FILENAME
+
+$ du -sh test/pcpu.sh 
+4.0K	test/pcpu.sh
+# Multiple file arguments are accepted
+OR
+# du -h DIRECTORY
+$ du -h test/
+16K	test/
+
+Display grant total sum of disk usage
+=====================================
+$ du -c FILENAME1 FILENAME2..
+eg:
+du -c process_log.sh pcpu.sh 
+4	process_log.sh
+4	pcpu.sh
+8	total
+
+OR
+$ du  -c DIRECTORY
+Eg:
+$ du -c test/
+16	test/
+16	total
+
+OR
+$ du -c *.txt
+# Wildcards
+
+
+$ du -s FILES(s)
+$ du -sh DIRECTORY
+
+Eg:
+$ du -sh slynux
+680K	slynux
+
+Printing files in specified units
+=================================
+
+To print size in bytes (By default),
+$ du -b FILE(s)
+To print size in kilobytes,
+$ du -k FILE(s)
+To print size in megabytes,
+$ du -m FILE(s)
+To print size in given BLOCK size specified,
+$ du -B BLOCK_SIZE FILE(s)
+# BLOCK_SIZE specified in bytes
+
+Excluding files from disk usage calculation
+===========================================
+
+1) Wildcards
+Use:
+$ du –exclude “WILDCARD” DIRECTORY
+Eg:
+$ du –exclude “*.txt” FILES(s) 
+# Excludes all .txt files from calculation
+
+2) Exclude list
+We can specify a list of files to be excluded from a file as 
+$ du –exclude-from EXCLUDE.txt DIRECTORY
+# EXCLUDE.txt is the file containing list
+
+Restricting with depth
+======================
+$ du –depth 2 DIRECTORY
+
+Finding 10 largest size files from a given directory
+====================================================
+
+$ du -ak SOURCE_DIR | sort -nrk 1 | head
+
+Large files (Without directories)
+
+$ find . -type f -exec du -k {} \; | sort -nrk 1 | head
+
+Disk free information:
+======================
+$ df
+Filesystem           1K-blocks      Used Available Use% Mounted on
+/dev/sda1              9611492   2276840   6846412  25% /
+none                    508828       240    508588   1% /dev
+none                    513048       168    512880   1% /dev/shm
+none                    513048        88    512960   1% /var/run
+none                    513048         0    513048   0% /var/lock
+none                    513048         0    513048   0% /lib/init/rw
+none                   9611492   2276840   6846412  25% /var/lib/ureadahead/debugfs
+
+
+
+$ df -h
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/sda1             9.2G  2.2G  6.6G  25% /
+none                  497M  240K  497M   1% /dev
+none                  502M  168K  501M   1% /dev/shm
+none                  502M   88K  501M   1% /var/run
+none                  502M     0  502M   0% /var/lock
+none                  502M     0  502M   0% /lib/init/rw
+none                  9.2G  2.2G  6.6G  25% /var/lib/ureadahead/debugfs
+
+

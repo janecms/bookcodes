@@ -1,0 +1,68 @@
+Recipe : Basic awk primer
+
+
+$ echo -e "line1\nline2" | awk 'BEGIN{ print "Start" } { print } END{ print "End" } ' 
+Start 
+line1 
+line2 
+End 
+
+
+
+$ echo -e "line1 f2 f3\nline2 f4 f5\nline3 f6 f7" | \
+
+awk '{
+ print "Line no:"NR",No of fields:"NF, "$0="$0, "$1="$1,"$2="$2,"$3="$3 
+}' 
+Line no:1,No of fields:3 $0=line1 f2 f3 $1=line1 $2=f2 $3=f3 
+Line no:2,No of fields:3 $0=line2 f4 f5 $1=line2 $2=f4 $3=f5 
+Line no:3,No of fields:3 $0=line3 f6 f7 $1=line3 $2=f6 $3=f7
+
+
+Summing numbers from each line
+==============================
+$ seq 5 | awk 'BEGIN{ sum=0; print "Summation:" } 
+{ print $1"+"; sum+=$1 } END { print "=="; print sum }' 
+Summation: 
+1+ 
+2+ 
+3+ 
+4+ 
+5+ 
+==
+15
+
+
+Passing a variable value from outside to awk
+============================================
+$ VAR=10000
+$ echo | awk -v VARIABLE=$VAR'{ print VARIABLE }
+1
+
+
+getline var
+===========
+$ seq 5 | awk 'BEGIN { getline; print "Read ahead first line", $0 } { print $0 }' 
+Read ahead first line 1 
+2 
+3 
+4 
+5 
+
+
+Filtering lines processed by awk with filter patterns
+=====================================================
+$ awk 'NR < 5' # Line number less than 5
+$ awk 'NR==1,NR==4' #Line numbers from 1-5
+$ awk '/linux/' # Lines contianing the pattern linux (We can specify regex)
+$ awk '!/linux/' # Lines not containing pattern linux
+
+
+
+Setting delimiter for fields
+============================
+$ awk -F: '{ print $NF }' /etc/passwd
+
+$ awk  'BEGIN { FS=":" } { print $NF }' /etc/passwd
+
+

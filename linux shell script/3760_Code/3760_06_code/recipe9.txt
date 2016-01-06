@@ -1,0 +1,46 @@
+Recipe: Backup snapshots with rsync
+
+$ rsync -av source_path destination_path
+
+Backup to remote location
+=========================
+$ rsync -av source_dir username@host:PATH
+
+Restore
+=======
+
+$ rsync -av username@host:PATH destination
+
+Compression
+===========
+
+Use -z
+$ rsync -avz /home/test /home/backups
+
+
+Excluding files while archiving with rsync
+==========================================
+$ rsync -avz /home/code/some_code /mnt/disk/backup/code –-exclude "*.txt"
+
+or
+Use --exclude-from FILEPATH
+
+Deleting non-existant while updating rsync backup
+=================================================
+
+$ rsync -avz SOURCE DESTINATION --delete
+
+Scheduling backups at intervals
+===============================
+
+
+$ crontab -e
+Add the line,
+0 */10 * * * rsync -avz /home/code user@IP_ADDRESS:/home/backups
+# Above code schedules the rsync to be executed every 10 hours.
+
+
+
+
+
+

@@ -1,0 +1,83 @@
+Recipe : Columnwise cutting of file with cut
+
+Synatx
+======
+$ cut -f FIELD_LIST filename
+
+
+$ cat student_data.txt 
+No	Name	Mark	Percent 
+1	Sarath	45	    90 
+2	Alex	49	    98 
+3	Anu	    45	    90
+
+Cutting first field
+===================
+$ cut -f1 student_data.txt
+No 
+1 
+2 
+3
+
+Extracting multiple fields
+==========================
+$ cut -f2,4 student_data.txt
+Name	Percent 
+Sarath	90 
+Alex	98 
+Anu	    90 
+
+Compliment operation with cut
+=============================
+$ cut -f3 --complement student_data.txt
+No	Name	Percent 
+1	Sarath	90 
+2	Alex	98 
+3	Anu	    90
+
+Specifying delimiter to cut
+===========================
+$ cat delimited_data.txt
+No;Name;Mark;Percent
+1;Sarath;45;90 
+2;Alex;49;98 
+3;Anu;45;90
+
+$ cut -f2 -d";" delimited_data.txt 
+Name 
+Sarath 
+Alex 
+Anu 
+
+Range of characters or bytes as fields
+======================================
+$ cat range_fields.txt 
+abcdefghijklmnopqrstuvwxyz 
+abcdefghijklmnopqrstuvwxyz 
+abcdefghijklmnopqrstuvwxyz 
+abcdefghijklmnopqrstuvwxy
+
+$ cut -c1-5 range_fields.txt 
+abcde 
+abcde 
+abcde 
+abcde
+
+$ cut range_fields.txt -c-2 
+ab 
+ab 
+ab 
+ab
+
+Output delimiter
+================
+$ cut range_fields.txt -c1-3,6-9 --output-delimiter ","
+abc,fghi 
+abc,fghi 
+abc,fghi 
+abc,fghi
+
+
+
+
+

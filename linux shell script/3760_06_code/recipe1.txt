@@ -1,0 +1,89 @@
+Recipe: Archiving with tar
+
+
+Creating a tar archive
+======================
+
+$ tar -cf output.tar [SOURCES]
+
+$ tar -cf output.tar file1 file2 file3 folder1 ..
+
+Append files to archive
+=======================
+
+$ tar -rvf original.tar new_file
+
+Printing more details (verbose) / Listing files
+================================================
+
+$ tar -tvvf archive.tar
+drwxr-xr-x slynux/slynux     0 2010-08-06 09:31 yy/
+drwxr-xr-x slynux/slynux     0 2010-08-06 09:39 yy/usr/
+drwxr-xr-x slynux/slynux     0 2010-08-06 09:31 yy/usr/lib64/
+
+
+Extracting archive
+==================
+$ tar -xf archive.tar 
+# Extracts contents of archive in current directory
+
+$ tar -xf archive.tar -C folder_path
+#Extracts content of archive in specified directory
+
+
+stdin and stdout with tar
+=========================
+$ mkdir ~/destination
+$ tar -cf - file1 file2 file3 .. | tar -xvf -  -C ~/destination
+
+Concatenating two archives
+==========================
+$ tar -Af file1.tar file2.tar
+
+Updating files in an archive
+============================
+$ tar -uvvf archive.tar filea
+
+
+Comparing files in archive and file system
+==========================================
+$ tar -df archive.tar afile bfile
+afile: Mod time differs 
+afile: Size differs 
+
+Deleting files from archive
+===========================
+
+$ tar -f archive.tar --delete file1 file2 ..
+
+$ tar --delete [FILE LIST] archive.tar
+
+Compression with tar archive
+============================
+
+Use -a and use .tar.lzma, .tar.gz, tar.bz2 as extension for files
+
+Excluding a set of files from archiving
+=======================================
+$ tar -cf arch.tar * --exclude "*.txt"
+
+$ tar -cf arch.tar * -X list
+# list is a file containing list of filepaths
+
+Excluding version control directories
+=====================================
+use --exclude-vcs 
+
+Printing total bytes
+====================
+use --totals
+
+$ tar -cf arc.tar * --exclude "*.txt" --totals 
+Total bytes written: 20480 (20KiB, 12MiB/s)
+
+
+
+
+
+
+

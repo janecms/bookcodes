@@ -1,0 +1,87 @@
+Recipe: Finding files and file listing
+
+Current directory listing
+=========================
+$ find . -print
+
+Parent directory listing
+========================
+$ find .. -print
+
+Search upon file name or regex match
+====================================
+$ find /home/slynux -name "*.txt" -print
+
+$ find . \( -name "*.txt" -o -name "*.pdf" \) -print # Combine multiple -name
+
+$ find /home/users -path "slynux" -print # Path contain slynux
+
+$ find . -regex ".*\(\.py\|\.sh\)$" # Regular expression match
+
+Negation of argument
+====================
+$ find . ! -name "*.txt" -print
+
+Depth parameters
+================
+$ find . -type f -maxdepth 1 -print
+#Lists all the regular files only from current directory. If there are subdirectories they are not printed or traversed.
+
+
+$ find . -type f -mindepth 2
+./dir1/dir2/file1
+./dir3/dir4/f2
+# Even if there are files in current directory or dir1 and dir3, it will not be printed.
+
+filetype parameter
+==================
+$ find . -type d -print #Directories
+
+$ find . -type f -print #Regular files
+
+$ find . -type l #Symlinks
+
+time parameters
+===============
+$ find . -type f -atime -7 -print
+$ find . -type f -atime 7 -print
+$ find . -type f -atime +7 -print
+
+
+$ find . -type f -newer file.txt -print
+
+file size parameter
+===================
+$ find . -type f -size +2k
+# Files having size greater than 2 kilobytes
+
+$ find . -type f -size -2k
+# Files having size less than 2 kilobytes
+
+$ find . -type f -size 2k
+# Files having size 2 kilobytes
+
+-delete parameter
+=================
+$ find . -type f -name *.swp" -delete
+
+permissions parameter
+=====================
+$ find . -type f -perm 644 -print
+# Print files having permission 644
+
+
+-exec parameter
+===============
+$ find . -type f -name "*.c" -exec cat {} \; > all_c_files.txt
+
+$ find . -type f -mtime +10 -name "*.txt" -exec cp {} OLD  \;
+
+$ find . -type f -name "*.txt" -exec printf "Text file: %s\n" {} \;
+
+Skip specfied directories -prune
+================================
+$ find devel/source_path  \( -name ".git" -prune \) -o \( -type -print \)
+# Instead of \( -type f -print \), use required filter
+
+

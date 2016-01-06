@@ -1,0 +1,59 @@
+Recipe: Intersection and set difference (A-B) on text files
+
+comm
+====
+
+$ cat items1.txt
+apple 
+orange 
+gold 
+silver 
+steel 
+iron 
+
+
+$ cat items2.txt
+orange 
+gold 
+cookies 
+carrot
+
+
+$ sort items1.txt -o items1.txt ; sort items2.txt -o items2.txt
+$ comm items1.txt items2.txt 
+apple 
+	      carrot 
+	      cookies 
+		                 gold 
+iron 
+		                 orange 
+silver 
+steel 
+
+Intersection
+============
+
+$ comm items1.txt items2.txt -1 -2
+gold
+orange
+
+Uncommon lines
+==============
+$ comm items1.txt items2.txt -3 | grep -o "[[:alnum:] ]*"
+apple
+carrot
+cookies
+iron
+silver
+steel 
+
+
+Set difference
+==========
+$ comm items1.txt items2.txt -2 -3
+apple
+iron
+silver
+steel 
+
+

@@ -1,2 +1,0 @@
-hadoop jar hadoop-examples.jar v3.MaxTemperatureDriver -conf conf/hadoop-cluster.xml \
-  input/ncdc/all max-temp

@@ -1,0 +1,44 @@
+Recipe: Scheduling with cron
+
+
+$ crontab –e
+02 02 * * * /home/slynux/script.sh
+
+
+Shutdown the computer at 2 am every day:
+00 02 * * * /sbin/shutdown -h
+
+Schedule
+========
+$ crontab task.cron
+
+
+$ crontab <<EOF
+02 * * * * /home/slynux/script.sh
+EOF
+
+Specify environment variable
+============================
+crontab <<EOF
+http_proxy=http://192.168.03:3128
+00 * * * * /home/slynux/download.sh
+EOF
+
+
+View cron table
+===============
+$ crontab –l
+02 05 * * * /home/user/disklog.sh
+
+
+$ crontab –l –u slynux
+09 10 * * * /home/slynux/test.sh
+
+Remove cron table
+=================
+$ crontab –r
+or
+# crontab –u slynux –r
+
+
+

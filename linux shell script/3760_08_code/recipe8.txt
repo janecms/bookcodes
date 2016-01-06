@@ -1,0 +1,14 @@
+Recipe: Logfile management with logrotate
+
+Sample logrotate config
+=======================
+$ cat /etc/logrotate.d/program
+/var/log/program.log {
+    missingok
+    notifempty
+    size 30k
+	  compress
+    weekly
+	  rotate 5
+    create 0600 root root
+}

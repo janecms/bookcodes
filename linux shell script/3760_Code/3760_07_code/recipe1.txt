@@ -1,0 +1,103 @@
+Recipe: Basic networking primer
+
+ifconfig example:
+=================
+
+$ ifconfig
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0 
+          inet6 addr: ::1/128 Scope:Host 
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1 
+          RX packets:6078 errors:0 dropped:0 overruns:0 frame:0 
+          TX packets:6078 errors:0 dropped:0 overruns:0 carrier:0 
+          collisions:0 txqueuelen:0 
+          RX bytes:634520 (634.5 KB)  TX bytes:634520 (634.5 KB) 
+
+wlan0     Link encap:Ethernet  HWaddr 00:1c:bf:87:25:d2  
+          inet addr:192.168.0.82  Bcast:192.168.3.255  Mask:255.255.252.0 
+          inet6 addr: fe80::21c:bfff:fe87:25d2/64 Scope:Link 
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1 
+          RX packets:420917 errors:0 dropped:0 overruns:0 frame:0 
+          TX packets:86820 errors:0 dropped:0 overruns:0 carrier:0 
+          collisions:0 txqueuelen:1000 
+          RX bytes:98027420 (98.0 MB)  TX bytes:22602672 (22.6 MB) 
+
+
+Printing list of network interfaces
+===================================
+$ ifconfig | cut -c-10 | tr -d ' ' | tr -s '\n'
+lo
+wlan0
+
+Set IP address for a network interface
+======================================
+# ifconfig wlan0 192.168.0.80 
+
+Set subnet mask along with IP address
+======================================
+# ifconfig wlan0 192.168.0.80  netmask 255.255.252.0
+
+Spoofing Hardware Address (MAC Address)
+=======================================
+
+# ifconfig eth0 hw ether 00:1c:bf:87:25:d5
+
+
+00:1c:bf:87:25:d5 is the new Hw Address to be assigned and eth0 is the interface
+
+
+DNS lookup
+==========
+
+$ host google.com 
+google.com has address 64.233.181.105 
+google.com has address 64.233.181.99 
+google.com has address 64.233.181.147 
+google.com has address 64.233.181.106 
+google.com has address 64.233.181.103 
+google.com has address 64.233.181.104 
+
+$ nslookup google.com 
+Server:		8.8.8.8 
+Address:	8.8.8.8#53 
+
+Non-authoritative answer: 
+Name:	google.com 
+Address: 64.233.181.105 
+Name:	google.com 
+Address: 64.233.181.99 
+Name:	google.com 
+Address: 64.233.181.147 
+Name:	google.com 
+Address: 64.233.181.106 
+Name:	google.com 
+Address: 64.233.181.103 
+Name:	google.com 
+Address: 64.233.181.104 
+
+Server:		8.8.8.8 
+
+
+route
+=====
+
+$ route 
+Kernel IP routing table 
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface 
+192.168.0.0     *               255.255.252.0   U     2      0        0 wlan0 
+link-local      *               255.255.0.0     U     1000   0        0 wlan0 
+default         proxy-4.local   0.0.0.0         UG    0      0        0 wlan0 
+
+
+$ route -n 
+Kernel IP routing table 
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface 
+192.168.0.0     0.0.0.0         255.255.252.0   U     2      0        0 wlan0 
+169.254.0.0     0.0.0.0         255.255.0.0     U     1000   0        0 wlan0 
+0.0.0.0         192.168.0.4     0.0.0.0         UG    0      0        0 wlan0 
+
+Adding route
+============
+# route add default gw 192.168.0.1 wlan0
+
+

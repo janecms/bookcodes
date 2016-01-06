@@ -1,0 +1,49 @@
+Recipe: Compress with bunzip (bzip)
+
+Compress with bzip2
+===================
+$ bzip2 filename
+$ ls 
+filename.bz2
+
+Extract bzipped file
+====================
+$ bunzip2 filename.bz2
+
+stdin and stdout
+================
+$ cat file | bzip2 -c > file.tar.bz2
+
+Creating bzipped tarball
+========================
+Method - I 
+$ tar -cjvvf archive.tar.bz2 [FILES] 
+or 
+$ tar -cavvf archive.tar.bz2 [FILES] 
+# -a option specifies automatically detect compression format from extension. 
+
+Method - II 
+$ tar -cvvf archive.tar [FILES] 
+# tarball first 
+$ bzip2 archive.tar 
+# Compress it after tarballing. 
+
+Extracting bzipped tarball 
+==========================
+$ tar -xjvvf archive.tar.bz2 -C extract_directory 
+
+Keep input files without removing them
+======================================
+$ bunzip2 test.bz2 -k
+
+
+Compression ratio
+=================
+
+$ bzip2 -9 test.img
+# Compress maximum
+
+Use 1 to 9
+
+
+

@@ -1,0 +1,34 @@
+Recipe: Record and playback terminal sessions
+
+
+script recording
+================
+$ script -t 2> timing.log -a output.session
+$ pwd
+/home/slynux/packtpub/final_chapters/chapter-2 code
+$ dir
+output.session	recipe1.txt  timing.log
+$ exit
+exit
+Script done, file is output.session
+
+Replay
+======
+$ scriptreplay timing.log output.session
+
+
+Multicasting terminal output
+============================
+
+#Terminal console - 1
+$ mkfifo scriptfifo
+
+#Terminal console - 2
+$ cat scriptfifo
+
+#Terminal console - 1
+$ script -f scriptfifo
+$ commands;
+
+
+

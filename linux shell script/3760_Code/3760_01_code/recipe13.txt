@@ -1,0 +1,51 @@
+Recipe: Internal Field separators and iterators
+
+
+Read CSV
+========
+$ data="name,sex,rollno,location"
+$ oldIFS=$IFS
+$ IFS=, ;
+$ now,
+$ for item in data;
+> do
+> echo Item: $item
+> done
+
+Item: name
+Item: sex
+Item: rollno
+Item: location
+
+
+for loop
+========
+for var in list;
+do
+	commands; # use $var
+done
+
+for((i=0;i<10;i++))
+{
+	commands; # Use $i
+}
+
+while loop
+==========
+while condition
+do
+	commands;
+done
+
+until loop
+==========
+x=0;
+until [ $x -eq 9 ]; # [ $x -eq 9 ] is the condition
+do let x++; echo $x;
+done
+
+
+Scripts
+=======
+read_csv.sh
+

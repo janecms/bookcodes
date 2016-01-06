@@ -1,0 +1,15 @@
+Recipe: Tempfile naming, and random numbers
+
+tempfile
+=========
+$ temp_file=$("tempfile")
+$ echo $temp_file
+# It looks like /tmp/fileaZWm8Y
+
+$ temp_file="/tmp/var.$$"
+#Using pid
+
+temp_file="/tmp/file-$RANDOM"
+#Using random number
+
+

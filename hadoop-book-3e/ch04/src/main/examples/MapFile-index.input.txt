@@ -1,1 +1,0 @@
-hadoop fs -text numbers.map/index

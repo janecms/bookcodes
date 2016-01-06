@@ -1,0 +1,38 @@
+Recipe: Printing on terminal
+
+Quotes
+======
+user@host:~$ echo "Welcome to Bash"
+Welcome to Bash
+
+user@host:~$ echo  Welcome to Bash
+Welcome to Bash
+
+user@host:~$ echo  'Welcome to Bash'
+Welcome to Bash
+
+user@host:~$ printf "Hello world"
+Hello world
+
+! and double quoting
+====================
+user@host:~$  echo "Hello world !"
+bash: !": event not found
+
+Fix for !
+=========
+user@host:~$ echo 'Hello world !'
+Hello world !
+
+user@host:~$ echo Hello world !
+Hello world !
+
+Escape sequence
+================
+user@host:~$ echo -e "1\t2\t3"
+1	2	3
+
+
+Scripts
+=======
+printf.sh

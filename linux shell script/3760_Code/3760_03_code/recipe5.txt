@@ -1,0 +1,52 @@
+Recipe: File permissions, ownership and sticky bit
+
+Setting permissions for files
+=============================
+
+$ chmod u=rwx g=rw o=r filename
+
+Adding executable permission to the other users
+==============================================
+
+$ chmod o+x filename
+
+Removing permission from all
+==============================
+
+$ chmod a-x filename
+
+Using numbers to denote permissions
+===================================
+$ chmod 755 filename
+
+
+Changing the ownership of files
+===============================
+
+$ chown user.group filename
+
+Sticky bits 
+===========
+
+$ chmod a+t directory_name
+
+Applying permissions recursively
+================================
+
+$ chmod 777 . -R
+
+Applying ownership recursively
+==============================
+
+$ chown user.group . -R
+
+Running an executable as different user
+=======================================
+
+$ chmod +s executable_file
+
+# chown root.root executable_file 
+# chmod +s executable_file
+$ ./executable_file
+
+

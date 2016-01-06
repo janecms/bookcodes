@@ -1,0 +1,3 @@
+$ ./write_to_db.sh studentdat.csv 
+Wrote data into DB
+

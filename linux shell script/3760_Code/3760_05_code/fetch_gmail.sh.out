@@ -1,0 +1,10 @@
+Example:
+
+$ ./fetch_gmail.sh  
+Author: SLYNUX [ slynux@slynux.com ]
+Subject: Book release - 2
+
+Author: SLYNUX [ slynux@slynux.com ]
+Subject: Book release - 1
+.
+… 5 entries

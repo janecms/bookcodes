@@ -1,0 +1,42 @@
+Recipe: Fast comandline navigation using pushd and popd
+
+Pushd
+=====
+
+~ $ pushd /var/www 
+/var/www ~
+var/www $ pushd /usr/src
+/usr/src /var/www ~
+/usr/src $ pushd /usr/share
+
+dirs
+=====
+/usr/src $ dirs
+/usr/share /usr/src /var/www ~
+
+Rearranging the stack
+=====================
+/etc$ pushd +3
+/var/www ~ /etc /usr/share /usr/src
+
+popd
+====
+/var/www $ popd
+~ /etc /usr/share /usr/src
+
+Deleting specific directories from stack
+========================================
+
+$ popd +2
+~ /etc /usr/src
+
+Most frequently used directory switching
+========================================
+/var/www $  cd /usr/src
+/usr/src $ # do something
+
+/usr/src $ cd -
+
+/var/www $ cd -
+
+

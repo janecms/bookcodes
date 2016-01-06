@@ -1,0 +1,84 @@
+Recipe: Playing with xargs
+
+Convert multiple line input into single line output
+===================================================
+$ cat example.txt # Example file
+1 2 3 4 5 6 
+7 8 9 10 
+11 12
+
+$ cat example.txt | xargs
+1 2 3 4 5 6 7 8 9 10 11 12 
+
+
+Convert single/multiple line into 3 line output
+===============================================
+$ cat example.txt | xargs -n 3
+1 2 3 
+4 5 6 
+7 8 9 
+10 11 12
+
+Delimiter to split lines
+========================
+$ echo "splitXsplitXsplitXsplit" | xargs -d X
+split split split split
+# Here we used -d X hence X is replaced with " " which is Internal Field Separator.
+
+Passing stdin as arguments by format in a line
+===============================================
+
+$ cat files.txt
+file1
+file2
+file3
+# Each of the files exist and contain text "hello"
+
+$ cat files.txt | xargs
+file1 file2 file3
+# Converted column wise to linear arguments format. Now supply this argument to a command.
+
+$ cat files.txt | xargs -I {} cat {}
+hello
+hello
+hello
+
+Arguments atonce and iterative execution
+========================================
+$ cat file1;cat file2;cat file3
+
+$ cat files.txt | xargs wc -l
+ 1 file1 
+ 1 file2 
+ 1 file3 
+ 3 total 
+# Use without -I
+# It is equivalent to wc -l file1 file2 file3
+# wc is for word count
+
+
+xargs with find
+===============
+$ find . -type f -name "*.txt" -print0 | xargs -0 rm -f
+# Removes all .txt fes
+
+Count LOC
+=========
+$ find source -type f -name "*.c" -print0 | xargs -0 wc -l
+
+Subshell trick with stdin
+=========================
+$ cat files.txt  | ( while read arg; do cat $arg; done )
+# Equivalent to  cat files.txt | xargs -I {} cat {}
+
+
+
+
+
+
+
+
+
+
+
+

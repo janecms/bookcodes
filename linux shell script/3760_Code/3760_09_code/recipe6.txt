@@ -1,0 +1,5 @@
+/proc – gathering information  
+
+$ readlink /proc/4295/exe
+/bin/bash
+

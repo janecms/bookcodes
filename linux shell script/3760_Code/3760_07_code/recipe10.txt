@@ -1,0 +1,47 @@
+Recipe: Network traffic and port analysis
+
+lsof
+====
+$ lsof -i
+COMMAND    PID   USER   FD   TYPE DEVICE SIZE/OFF NODE NAME 
+firefox-b 2261 slynux   78u  IPv4  63729      0t0  TCP localhost:47797->localhost:42486 (ESTABLISHED) 
+firefox-b 2261 slynux   80u  IPv4  68270      0t0  TCP slynux-laptop.local:41204->192.168.0.2:3128 (CLOSE_WAIT) 
+firefox-b 2261 slynux   82u  IPv4  68195      0t0  TCP slynux-laptop.local:41197->192.168.0.2:3128 (ESTABLISHED) 
+ssh       3570 slynux    3u  IPv6  30025      0t0  TCP localhost:39263->localhost:ssh (ESTABLISHED) 
+ssh       3836 slynux    3u  IPv4  43431      0t0  TCP slynux-laptop.local:40414->boneym.mtveurope.org:422 (ESTABLISHED) 
+GoogleTal 4022 slynux   12u  IPv4  55370      0t0  TCP localhost:42486 (LISTEN) 
+GoogleTal 4022 slynux   13u  IPv4  55379      0t0  TCP localhost:42486->localhost:32955 (ESTABLISHED) 
+
+
+Listing out the opened ports from current machine
+==================================================
+$ lsof -i | grep ":[0-9]\+->" -o | grep "[0-9]\+" -o  | sort | uniq
+40207
+40890
+40893
+40895
+41326
+41332
+41336
+41337
+41338
+41339
+
+
+netstat
+=======
+
+$ netstat -tnp 
+(Not all processes could be identified, non-owned process info 
+ will not be shown, you would have to be root to see it all.) 
+Active Internet connections (w/o servers) 
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name 
+tcp        0      0 192.168.0.82:38163      192.168.0.2:3128        ESTABLISHED 2261/firefox-bin 
+tcp        0      0 192.168.0.82:38164      192.168.0.2:3128        TIME_WAIT   -               
+tcp        0      0 192.168.0.82:40414      193.107.206.24:422      ESTABLISHED 3836/ssh        
+tcp        0      0 127.0.0.1:42486         127.0.0.1:32955         ESTABLISHED 4022/GoogleTalkPlug  
+tcp        0      0 192.168.0.82:38152      192.168.0.2:3128        ESTABLISHED 2261/firefox-bin 
+tcp6       0      0 ::1:22                  ::1:39263               ESTABLISHED -               
+tcp6       0      0 ::1:39263               ::1:22                  ESTABLISHED 3570/ssh    
+
+

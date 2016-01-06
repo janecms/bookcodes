@@ -1,1 +1,0 @@
-hadoop MaxTemperature input/ncdc/sample.txt output

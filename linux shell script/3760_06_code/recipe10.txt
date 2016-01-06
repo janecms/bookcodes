@@ -1,0 +1,86 @@
+Recipe: Version control based backup with GIT
+
+Setup and initiate remote backup directory
+==========================================
+$ mkdir -p /home/backups/slynux.git
+
+$ cd /home/backups/backup.git
+$ git init --bare
+
+
+
+Initiating the backup directory
+===============================
+
+$ git init
+# Initialize git repository
+
+$ git commit -am "Init"
+
+
+Add user details to git (Optional)
+$ git config --global slynux  "Sarath Lakshman"
+#Set nick name and full name
+
+$ git config --global slynux@slynux.com
+# Set email
+
+
+$ git add remote origin user@remotehost:/home/backups/backup.git
+$ git push origin master
+
+
+Add/Remove files for git tracking
+$ git add *
+# Adds all files and folders in the current directory to backup list. 
+or we can conditionally add certain files only to backup list as follows
+$ git add *.txt
+$ git add *.py
+
+#Remove files
+$ git rm file  
+# It can be a folder or even wildcard
+$ git rm *.txt
+
+
+
+Check-pointing or marking backup points
+=======================================
+
+$ git commit -m "Commit Message"
+
+We need to update the backup at remote location at regular intervals. Hence, setup a crontab scheduling. (Say, backup every 5 hours )
+Create a file crontab.entry with lines: 
+0 */5 * * *  /home/data/backup.sh
+
+Create a script /home/data/backup.sh:
+
+#!/bin/ bash
+cd /home/data/source
+git add .
+git commit -am "Commit - @ $(date)"
+git push
+
+
+
+Restoring data with git
+========================
+
+To view all backup versions,
+$ git log
+
+
+
+To revert back to any previous state/ version. Look into commit ID, which is a 32 character hex string. Use commit ID with git checkout.
+For commit ID  3131f9661ec1739f72c213ec5769bc0abefa85a9,
+$ git checkout 3131f9661ec1739f72c213ec5769bc0abefa85a9
+
+$ git commit -am "Restore @ $(date) commit ID: 3131f9661ec1739f72c213ec5769bc0abefa85a9"
+$ git push
+
+
+Recreating backuped directory with git
+======================================
+$ git clone user@remotehost:/home/backups/backup.git
+
+

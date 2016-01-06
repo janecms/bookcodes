@@ -1,0 +1,16 @@
+Recipe: POST to a web page and reading response
+
+
+POST in curl
+============
+
+$ curl --data "name=value" URL -o output.html
+
+$ curl -d "name1=val1&name2=val2" URL -o output.html
+
+
+POST data using wget
+====================
+
+$ wget URL --post-data "name=value" -O output.html
+

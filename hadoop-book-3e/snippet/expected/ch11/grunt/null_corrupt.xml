@@ -1,3 +1,0 @@
-<screen format="linespecific"><prompt moreinfo="none">grunt&gt; </prompt><userinput moreinfo="none">corrupt_records = FILTER records BY temperature is null;</userinput>
-<prompt moreinfo="none">grunt&gt; </prompt><userinput moreinfo="none">DUMP corrupt_records;</userinput>
-(1950,,1)</screen>

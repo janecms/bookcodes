@@ -1,0 +1,13 @@
+$ ./top10_commands.sh
+COMMAND	COUNT
+ping		80
+ls			56
+cat		35
+ps			34
+sudo		26
+du			26
+cd			26
+ssh		22
+sftp		22
+clear		21
+

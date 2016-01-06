@@ -1,0 +1,89 @@
+Recipe: Curl primer
+
+Downloading webpages with curl
+==============================
+$ curl URL --silent
+# Dumps webpage/file to stdout
+
+
+$ curl URL --silent -O
+#Writes webpage or file to the filename as in the URL instead of writing to stdout
+
+$ curl http://test.com/file.jpg --silent
+# Downloads and creates file.jpg
+
+$ curl URL --silent -o new_filename
+# -o can be used to download as specified filename
+
+Showing progress bar,
+$ curl http://example.com -o index.html --progress 
+################################## 100.0% 
+
+
+POST data with curl
+===================
+
+$ curl URL -d "postvar=postdata2&postvar2=postdata2"
+
+$ curl http://hello.com/post.php -d "name=slynux&pass=hack"
+
+Continue/Resume downloading
+===========================
+
+$ curl -C - URL
+
+Set Referer string with curl
+============================
+
+$ curl --referer Referer_URL target_URL
+$ curl --referer http://google.com http://slynux.org
+
+Cookies with curl
+=================
+
+$ curl http://example.com --cookie "user=slynux;pass=hack"
+
+$ curl URL --cookie-jar cookie_file
+
+Set user agent string with curl
+===============================
+$ curl URL --user-agent "Mozilla/5.0"
+
+Use -H "Header" to pass multiple additional headers
+
+$ curl -H "Host: www.slynux.org" -H "Accept-language: en" URL 
+
+Specify bandwidth limit on curl
+===============================
+
+--limit-rate 20k
+
+--max-filesize bytes
+
+k - KB
+m - MB
+
+Authenticating with curl
+========================
+-u username:password
+
+$ curl -u user:pass http://test_auth.com
+
+To prompt password,
+$ curl -u user http://test_auth.com 
+
+Print response headers excluding data
+=====================================
+
+$ curl -I http://slynux.org
+HTTP/1.1 200 OK
+Date: Sun, 01 Aug 2010 05:08:09 GMT
+Server: Apache/1.3.42 (Unix) mod_gzip/1.3.26.1a mod_log_bytes/1.2 mod_bwlimited/1.4 mod_auth_passthrough/1.8 FrontPage/5.0.2.2635 mod_ssl/2.8.31 OpenSSL/0.9.7a
+Last-Modified: Thu, 19 Jul 2007 09:00:58 GMT
+ETag: "17787f3-3bb0-469f284a"
+Accept-Ranges: bytes
+Content-Length: 15280
+Connection: close
+Content-Type: text/html
+
+

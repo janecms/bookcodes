@@ -1,0 +1,18 @@
+Recipe: Archiving with cpio
+
+
+Creating archive with cpio
+==========================
+
+$ echo file1 file2 file3 | cpio -ov > archive.cpio
+
+Listing files in a cpio archive
+===============================
+
+$ cpio -it < archive.cpio
+
+Extracting files from cpio archive
+==================================
+$ cpio -id < archive.cpio
+
+

@@ -1,0 +1,56 @@
+Recipe: Playing with file descriptors and redirection
+
+Saving output to a file
+=======================
+$ echo "This is a sample text 1" > temp.txt
+
+
+Appending output to a file
+==========================
+$ echo "This is sample text 2" >> temp.txt
+
+$ cat temp.txt
+This is sample text 1
+This is sample text 2
+
+
+Redirecting error using 2> and 2>&1
+===================================
+$ ls + 2> out.txt
+
+
+$ cmd 2>&1 output.txt 
+
+$ $ cmd &> output.txt
+
+tee
+===
+$ ls + 2>&1 |  tee out.txt
+$: command not found
+
+$ cat out.txt
+$: command not found
+
+Duplicating with tee
+====================
+$ echo who is this | tee -
+who is this 
+who is this 
+
+Redirection from file
+=====================
+$ cmd < file
+
+$ cat < file
+
+
+Custom file descriptors
+=======================
+
+$ exec 4>input.txt # open for writing
+$ echo hello >&4 # Concatenate hello to input.txt
+$ exec 3<input.txt # open for reading
+$ cat <&3 # Reading from descriptor associated file (Similar to Section 2)
+hello
+
+

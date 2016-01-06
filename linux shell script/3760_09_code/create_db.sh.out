@@ -1,0 +1,4 @@
+$ ./create_db.sh 
+Created DB
+Created table students
+

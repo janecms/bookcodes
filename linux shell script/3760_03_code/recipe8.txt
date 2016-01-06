@@ -1,0 +1,30 @@
+Recipe:Finding symbolic links and its target 
+
+
+Symbolic link
+=========================
+
+$ ln -s target symbolic_link_name
+
+$ ls web
+lrwxrwxrwx 1 slynux slynux 8 2010-06-25 21:34 web -> /var/www
+web -> /var/www specifies it points to /var/www
+
+Print the symbolic links
+===========================
+
+$ ls -l | grep "^l" | awk '{ print $8 }'
+
+
+$ find . -type l -print #alternate way
+
+Print the target of a symbolic link
+======================================
+
+$ ls -l web | awk '{ print $10 }'
+/var/www
+
+readlink
+========
+$ readlink web
+/var/www

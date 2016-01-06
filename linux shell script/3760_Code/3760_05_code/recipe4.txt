@@ -1,0 +1,6 @@
+Recipe: Access unread GMAIL mails from commandline
+
+Scripts:
+========
+fetch_gmail.sh
+

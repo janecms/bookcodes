@@ -1,0 +1,10 @@
+Recipe: Debugging the script
+
+Print source lines with status
+==============================
+$ bash -x script.sh
+
+Scripts
+=======
+debug.sh
+script.sh

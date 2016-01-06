@@ -1,0 +1,6 @@
+$ ./watchdir.sh .
+./ CREATE new
+./ MOVED_FROM new
+./ MOVED_TO news
+./ DELETE news
+

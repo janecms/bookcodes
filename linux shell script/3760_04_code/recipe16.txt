@@ -1,0 +1,53 @@
+Recipe: Printing n lines later or before a pattern in file
+
+
+$ cat actress_rankings.txt  | head -n 20 
+1 Keira Knightley 
+2 Natalie Portman 
+3 Monica Bellucci 
+4 Bonnie Hunt 
+5 Cameron Diaz 
+6 Annie Potts 
+7 Liv Tyler 
+8 Julie Andrews 
+9 Lindsay Lohan 
+10 Catherine Zeta-Jones 
+11 Cate Blanchett 
+12 Sarah Michelle Gellar 
+13 Carrie Fisher 
+14 Shannon Elizabeth 
+15 Julia Roberts 
+16 Sally Field 
+17 Téa Leoni 
+18 Kirsten Dunst 
+19 Rene Russo 
+20 Jada Pinkett
+
+
+
+
+To print 3 lines after the match line along with match line
+===========================================================
+$ grep -A 3 "Cameron Diaz" actress_rankings.txt
+5 Cameron Diaz 
+6 Annie Potts 
+7 Liv Tyler 
+8 Julie Andrews 
+
+To print 3 lines before match line including match line
+=======================================================
+$ grep -B 3 "Cameron Diaz" actress_rankings.txt 
+2 Natalie Portman 
+3 Monica Bellucci 
+4 Bonnie Hunt 
+5 Cameron Diaz 
+
+To print lines 2 lines before and after the match line including match line
+===========================================================================
+$ grep -C 2 "Cameron Diaz" actress_rankings.txt 
+3 Monica Bellucci 
+4 Bonnie Hunt 
+5 Cameron Diaz 
+6 Annie Potts 
+7 Liv Tyler
+

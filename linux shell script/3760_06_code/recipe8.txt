@@ -1,0 +1,56 @@
+Recipe: Cryptographic tools and hashes
+
+
+crypt
+=====
+$ crypt < input_file > output_file
+Enter passphrase: 
+
+$ crypt PASSPHRASE < input_file > encrypted_file
+
+Decrypt
+=======
+
+$ crypt PASSPHRASE -d < encrypted_file > output_file
+
+gpg
+===
+$ gpg -c filename
+
+Decrypt gpg file
+================
+$ gpg filename.gpg
+
+
+base64
+======
+$ base64 filename > outputfile
+OR
+$ cat file | base64 > outputfile
+
+
+To decode base64 data
+=====================
+$ base64 -d file > outputfile
+
+$ cat base64_file | base64 -d > outputfile
+
+
+md5sum and sha1sum
+==================
+$ md5sum file 
+8503063d5488c3080d4800ff50850dc9  file 
+
+$ sha1sum file
+1ba02b66e2e557fede8f61b7df282cd0a27b816b  file 
+
+Generating shadow like hash (salted hash)
+=========================================
+$ openssl passwd -1 -salt SALT_STRING PASSWORD
+$1$SALT_STR$323VkWkSLHuhbt1zkSsUG.
+
+
+
+
+
+

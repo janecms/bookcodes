@@ -1,0 +1,19 @@
+Recipe: Calculating execution time for a command
+
+$ time COMMAND
+
+$ time ls
+test.txt
+next.txt
+real	0m0.008s
+user	0m0.001s
+sys	0m0.003s
+
+$ time -o output.txt COMMAND
+
+$ time -a output.txt COMMAND
+
+
+Formatted output:
+$ time -f “Time: %U” -a output.txt COMMAND
+#“Time: %U” is the format string

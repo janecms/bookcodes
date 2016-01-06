@@ -1,0 +1,21 @@
+Recipe: Renaming and moving files in bulk
+
+
+$ rename *.JPG *.jpg
+
+$ rename 's/ /_/g' *
+
+$ rename 'y/A-Z/a-z/' *
+$ rename 'y/a-z/A-Z/' *
+
+$ find path -type f -name "*.mp3" -exec mv {} target_dir \;
+
+$ find path -type f -exec rename 's/ /_/g' {} \;
+
+
+
+Scripts
+=======
+rename/rename.sh
+
+

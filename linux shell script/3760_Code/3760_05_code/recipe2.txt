@@ -1,0 +1,4 @@
+Recipe: Download web page as formatted plain text
+
+
+$ lynx URL -dump > webpage_as_text.txt

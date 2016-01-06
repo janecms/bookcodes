@@ -1,0 +1,73 @@
+Recipe: Compress with gunzip (gzip)
+
+Compress a file with gzip
+=========================
+
+$ gzip filename
+
+Extract a gzip compressed file
+==============================
+
+$ gunzip filename.gz
+
+
+To list out the properties of a compressed file
+===============================================
+
+$ gzip -l test.txt.gz 
+         compressed        uncompressed  ratio uncompressed_name 
+                 35                   6 -33.3% test.txt 
+
+stdin and stdout
+================
+$ cat file | gzip -c > file.tar.gz
+
+
+gzip with tarball
+=================
+
+Method - I
+
+$ tar -czvvf archive.tar.gz [FILES]
+or
+$ tar -cavvf archive.tar.gz [FILES]
+
+
+Extract tarball
+===============
+$ tar -xzvvf archive.tar.gz -C extract_directory
+OR
+$ tar -cavvf archive.tar.gz [FILES]
+
+
+
+Method - II
+$ tar -cvvf archive.tar [FILES]
+# Create tarball first
+$ gzip archive.tar
+# Compress it after tarballing.
+
+
+zcat
+====
+$ ls
+test.gz
+$ zcat test.gz
+A test file
+
+$ ls 
+test.gz
+
+
+Compression ratio
+=================
+
+$ gzip -9 test.img
+# Compress maximum
+
+use 1 to 9
+
+
+
+
+

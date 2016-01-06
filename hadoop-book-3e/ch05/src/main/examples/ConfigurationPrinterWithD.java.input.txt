@@ -1,1 +1,0 @@
-hadoop ConfigurationPrinter -D color=yellow | grep color

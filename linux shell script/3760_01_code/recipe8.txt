@@ -1,0 +1,31 @@
+Recipe: Get, set dates and delays
+
+date
+====
+$ date
+Thu May 20 23:09:04 IST 2010
+
+Epoch time
+==========
+$ date +%s
+1278353803
+
+Custom formatted date
+==============
+$ date "+%d %B %Y"
+20 May 2010
+
+
+Setting date
+============
+# date -s "21 June 2009 11:01:22"
+
+Note: # prompt means Run as root
+
+Get execution time
+==================
+$ time command
+
+Scripts
+=======
+time_taken.sh

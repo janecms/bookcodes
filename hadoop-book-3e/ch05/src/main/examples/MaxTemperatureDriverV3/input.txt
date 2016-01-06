@@ -1,2 +1,0 @@
-hadoop v3.MaxTemperatureDriver -conf conf/hadoop-local.xml \
-  input/ncdc/micro output

@@ -1,0 +1,8 @@
+Recipe: Multi-casting window messages on a network
+
+$ zenity --info --text "This is a message"
+# It will display a window with "This is a meesage" as text.
+
+Scripts
+=======
+multi_cast_window.sh

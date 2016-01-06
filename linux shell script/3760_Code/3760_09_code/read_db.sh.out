@@ -1,0 +1,20 @@
+$ ./read_db.sh 
+Department : CS
+rank	name	mark
+1	Navin M	98
+2	Nawaz O	80
+3	Kavya N	70
+
+Department : EC
+rank	name	mark
+1	Hari S	80
+2	Neenu J	70
+3	Alex M	50
+4	Bob A	30
+
+Department : AE
+rank	name	mark
+1	Anu M	90
+2	Sruthi	89
+3	Andrew	89
+

@@ -1,0 +1,57 @@
+Recipe: Downloading a file or web page
+
+Download files/webpage with wget
+================================
+$ wget URL
+
+$ wget http://slynux.org
+--2010-08-01 07:51:20--  http://slynux.org/
+Resolving slynux.org... 174.37.207.60
+Connecting to slynux.org|174.37.207.60|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 15280 (15K) [text/html]
+Saving to: “index.html”
+
+100%[======================================>] 15,280      75.3K/s   in 0.2s    
+
+2010-08-01 07:51:21 (75.3 KB/s) - “index.html” saved [15280/15280]
+
+
+$ wget URL1 URL2 URL3 ..
+
+$ wget ftp://example_domain.com/somefile.img
+
+Specifying output file and logfile
+==================================
+$ wget ftp://example_domain.com/somefile.img -O dloaded_file.img -o log
+
+$ wget -t 5 URL
+
+Restricting speed
+=================
+$ wget  --limit-rate 20k http://example.com/file.iso
+
+Restricted Quota
+================
+$ wget -Q 100m http://example.com/file1 http://example.com/file2
+
+Resume downloading and continue
+===============================
+$ wget -c URL
+
+Copying complete website (Mirroring)
+====================================
+$ wget --mirror exampledomain.com
+
+$ wget -r -N -l DEPTH --no-remove-listing URL
+
+#DEPTH is an integer
+
+Accessing pages with HTTP/FTP authentication
+============================================
+
+$ wget --user username --password pass URL
+# To prompt password interactively, use --ask-password instead of --password
+
+
+

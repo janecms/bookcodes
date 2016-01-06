@@ -1,0 +1,14 @@
+Recipe: Write and read MySQL database from Bash
+
+Scripts
+=======
+create_db.sh
+write_to_db.sh
+read_db.sh
+
+Input file
+==========
+studentdat.csv
+
+
+

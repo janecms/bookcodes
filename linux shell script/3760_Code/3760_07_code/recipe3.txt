@@ -1,0 +1,31 @@
+Recipe: Listing all the machines alive on a network
+
+fping
+=====
+
+$ fping -a 192.160.1/24 -g 2> /dev/null 
+192.168.0.1 
+192.168.0.90
+
+OR
+
+$ fping -a 192.168.0.1 192.168.0.255 -g
+
+
+DNS lookup with fping
+=====================
+$ cat ip.list 
+192.168.0.86 
+192.168.0.9 
+192.168.0.6
+
+$ fping -a -d 2>/dev/null  < ip.list 
+www.local 
+dnss.local
+
+
+
+Scripts:
+========
+ping.sh
+fast_ping.sh

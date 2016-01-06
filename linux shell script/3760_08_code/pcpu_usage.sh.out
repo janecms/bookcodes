@@ -1,0 +1,13 @@
+$ ./pcpu_usage.sh
+Watching CPU usage...
+CPU eaters :
+Xorg
+firefox-bin
+bash
+evince
+pulseaudio
+pcpu.sh
+wpa_supplicant
+wnck-applet
+watchdog/0
+usb-storage

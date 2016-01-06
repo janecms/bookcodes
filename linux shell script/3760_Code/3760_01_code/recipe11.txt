@@ -1,0 +1,32 @@
+Recipe: Reading output of a sequence of commands
+
+Read output using subshell
+==========================
+cmd_output=$("cmd")
+cmd_output=$("ls | cat -n")
+
+Read output using back-quotes
+=============================
+cmd_output=`cmd`
+cmd_output=`ls | cat -n`
+
+Spawn seperate process in between
+=================================
+commands;
+( cmd1; cmd2 ) # separate process
+commands;
+
+
+Preserve spacing with quotes
+$ cat text.txt
+1
+2
+3
+$ out=$(cat text.txt)
+echo $out;
+1 2 3 # Lost \n spacing in 1,2,3 
+$ out="$(cat tex.txt)"
+$ echo out
+1
+2
+3

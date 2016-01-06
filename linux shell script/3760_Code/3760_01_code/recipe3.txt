@@ -1,0 +1,52 @@
+Recipe: Math with shell
+
+let
+===
+$ no1=4 ; no2=5
+$ let result = no1 + no2
+$ echo $result
+9
+
+Alternatives
+============
+$ result=$[ no1 + no2 ]
+$ echo $result
+9
+
+$ result=$(( no1 + 50 ))
+$ echo $result 
+54
+
+expr
+====
+$ result=`expr 3 + 4`
+
+$ result=$(expr $no1 + 5)
+
+bc
+==
+
+$ echo "4 * 0.56" | bc
+2.24
+
+$ no=54
+$ result=`echo "$no * 1.5" | bc`
+$ echo $result
+81.0
+
+Decimal places scaling
+=====================
+$ echo "scale=2;3/8" | bc
+0.37
+
+Square and square root
+======================
+$ echo "sqrt(100)" | bc
+10
+
+$ echo "10^2" | bc
+100
+
+Scripts
+=======
+baseconvert.sh

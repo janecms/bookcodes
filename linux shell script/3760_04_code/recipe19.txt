@@ -1,0 +1,25 @@
+Recipe: Text slicing and parameter operations
+
+$ var = "This is a line of text"
+$ echo ${var/line/REPLACED}
+This is a REPLACED of text"
+
+"line" is replaced with "REPLACED"
+
+
+Producing sub string by specifying start position and string length
+===================================================================
+Syntax : 
+${variable_name:start_position:length}
+
+$ string=abcdefghijklmnopqrstuvwxyz
+$ echo ${string:4}
+efghijklmnopqrstuvwxyz
+$ echo ${string:4:8}
+efghijkl
+
+
+echo ${string:(-1)}
+z
+echo ${string:(-8):2}
+st

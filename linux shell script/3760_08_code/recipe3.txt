@@ -1,0 +1,44 @@
+Recipe: Info about logged users, boot logs, failure boot
+
+who
+===
+$ who
+slynux   pts/0   2010-09-29 05:24 (slynuxs-macbook-pro.local)
+slynux   tty7    2010-09-29 07:08 (:0) 
+
+w
+=
+$ w
+ 07:09:05 up  1:45,  2 users,  load average: 0.12, 0.06, 0.02
+USER     TTY     FROM    LOGIN@   IDLE  JCPU PCPU WHAT
+slynux   pts/0   slynuxs 05:24  0.00s  0.65s 0.11s sshd: slynux 
+slynux   tty7    :0      07:08  1:45m  3.28s 0.26s gnome-session
+
+users
+=====
+$ users
+slynux slynux slynux hacker
+
+Unique users
+============
+$ users | tr ' ' '\n' | sort | uniq
+slynux
+hacker
+
+uptime
+======
+$ uptime 
+ 21:44:33 up  3:17,  8 users,  load average: 0.09, 0.14, 0.09
+
+last
+====
+$ last
+slynux   tty7         :0               Tue Sep 28 18:27   still logged in   
+reboot   system boot  2.6.32-21-generi Tue Sep 28 18:10 - 21:46  (03:35)    
+slynux   pts/0        :0.0             Tue Sep 28 05:31 - crash  (12:39)    
+
+$ last reboot
+reboot   system boot  2.6.32-21-generi Tue Sep 28 18:10 - 21:48  (03:37)    
+reboot   system boot  2.6.32-21-generi Tue Sep 28 05:14 - 21:48  (16:33) 
+
+
