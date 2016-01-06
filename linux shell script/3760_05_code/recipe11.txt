@@ -1,5 +1,0 @@
-Recipe: Tracking changes in a website
-
-Scripts:
-=======
-change_track.sh

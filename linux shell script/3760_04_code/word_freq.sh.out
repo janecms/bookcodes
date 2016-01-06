@@ -1,6 +1,0 @@
-$ ./word_freq.sh words.txt
-Word          Count
-used           1
-this           2
-counting       1
-

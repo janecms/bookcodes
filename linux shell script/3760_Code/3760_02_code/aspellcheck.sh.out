@@ -1,5 +1,0 @@
-$ ./aspellcheck.sh ful
-ful is not a dictionary word
-
-$ ./aspellcheck.sh full
-full is a dictionary word

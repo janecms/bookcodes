@@ -1,6 +1,0 @@
-Recipe: Listing top 10 CPU consuming process in 1 hour
-
-Script
-======
-pcpu_usage.sh
-

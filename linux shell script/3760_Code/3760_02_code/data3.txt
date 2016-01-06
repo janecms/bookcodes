@@ -1,4 +1,0 @@
-u:01:gnu
-d:04:linux
-u:01:bash
-u:01:hack

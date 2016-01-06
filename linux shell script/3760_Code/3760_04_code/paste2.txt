@@ -1,4 +1,0 @@
-slynux
-gnu
-bash
-hack

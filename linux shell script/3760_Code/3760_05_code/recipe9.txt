@@ -1,5 +1,0 @@
-Recipe: Define utility with web backend
-
-
-Scripts:
-define.sh

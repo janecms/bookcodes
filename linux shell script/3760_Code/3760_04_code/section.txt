@@ -1,5 +1,0 @@
-line with pattern1
-line with pattern2
-line with pattern3
-line end with pattern4
-line with pattern5

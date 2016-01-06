@@ -1,5 +1,0 @@
-$ ./checkword.sh ful 
-ful is not a dictionary word 
-
-$ ./checkword.sh fool 
-fool is a dictionary word

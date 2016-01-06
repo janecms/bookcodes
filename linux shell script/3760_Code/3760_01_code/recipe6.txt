@@ -1,9 +1,0 @@
-Recipe: Visiting aliases
-
-$ alias new_command='command sequence'
-
-$ alias install='sudo apt-get install'
-
-Escaping alias
-==============
-$ \aliased_command

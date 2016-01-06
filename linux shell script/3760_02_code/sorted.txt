@@ -1,4 +1,0 @@
-bash 
-foss 
-hack 
-hack

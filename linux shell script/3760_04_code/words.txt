@@ -1,1 +1,0 @@
-this is a sample text. this sample file is used for as a test file for counting word frequency.
