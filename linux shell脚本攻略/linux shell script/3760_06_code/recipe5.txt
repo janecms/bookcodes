@@ -1,0 +1,52 @@
+Recipe: Compress with lzma
+
+Compress with lzma
+==================
+
+$ lzma filename
+$ ls 
+filename.lzma
+
+To extract lzma file,
+$ unlzma filename.lzma
+
+
+stdout and stdin
+================
+
+$ cat file | lzma -c > file.lzma
+-c is used to specify output to stdout
+
+Creating lzma tarball
+=====================
+
+Method - I 
+$ tar -cvvf --lzma archive.tar.lzma [FILES] 
+or 
+$ tar -cavvf archive.tar.lzma [FILES] 
+# -a option specifies automatically detect compression format from extension. 
+
+Method - II 
+$ tar -cvvf archive.tar [FILES] 
+# Create tarball first 
+$ lzma archive.tar 
+# Compress it after tarballing
+
+
+Extracting lzma tarball 
+=======================
+$ tar -xvvf --lzma archive.tar.lzma -C extract_directory 
+
+
+
+Keep input files without removing them
+======================================
+$ lzma test.bz2 -k
+
+Compression ratio
+=================
+$ lzma -9 test.img
+# Compress maximum
+
+Use 1-9
+

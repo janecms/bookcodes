@@ -1,0 +1,4 @@
+slynux
+gnu
+bash
+hack

@@ -1,0 +1,13 @@
+Recipe: Finding and deleting duplicate files
+
+Generating test files
+=====================
+
+$ echo "hello" > test ; cp test test_copy1 ; cp test test_copy2;
+$ echo "next" > other;
+# test_copy1 and test_copy2 are copy of test
+
+Scripts
+=======
+duplicates/remove_duplicates.sh
+

@@ -1,0 +1,18 @@
+Recipe: Replacing strings from a text or file
+
+Replacing pattern or text
+=========================
+
+$ sed 's/PATTEN/replace_text/g' filename
+or
+$ stdin | sed 's/PATTERN/replace_text/g'
+
+$ p=pattern
+$ r=replaced
+$ echo "line contain pattern" | sed "s/$p/$r/g" 
+line contain replaced
+
+Saving replacement in file
+==========================
+
+$ sed 's/PATTERN/replacement/' -i filename

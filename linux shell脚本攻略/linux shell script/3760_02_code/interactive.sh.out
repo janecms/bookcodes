@@ -1,0 +1,2 @@
+$ echo -e "1\nhello\n" | ./interactive.sh 
+You have entered 1, hello

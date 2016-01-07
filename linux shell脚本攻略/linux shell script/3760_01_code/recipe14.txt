@@ -1,0 +1,38 @@
+Recipe: Comparisons and tests
+
+if and else 
+============
+if condition; 
+then
+commands;
+else if condition; then
+commands;
+else
+commands;
+fi
+
+
+Conditional execution
+=====================
+[ condition ] && action; # action executes if condition is true.
+
+[ condition ] || action; # action executes if condition is false.
+
+
+Test of exist of file
+=====================
+fpath="/etc/passwd"
+if [ -e $fpath ]; then 
+echo File exists; 
+else 
+echo Does not exist; 
+fi
+
+Equality
+========
+if  [ $var -eq 0 ]; then echo "True"; fi
+can be written as
+if  test $var -eq 0 ; then echo "True"; fi
+
+
+

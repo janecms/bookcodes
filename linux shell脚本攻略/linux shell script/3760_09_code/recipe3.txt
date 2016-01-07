@@ -1,0 +1,31 @@
+Recipe: Which, whereis, file, whatis, loadavg explained !
+
+which
+=====
+$ which ls
+/bin/ls
+
+
+whereis
+=======
+$ whereis ls
+ls: /bin/ls /usr/share/man/man1/ls.1.gz
+
+
+file
+====
+$ file /bin/ls
+/bin/ls: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.15, stripped
+
+whatis
+======
+$ whatis ls
+ls (1)               - list directory contents
+
+Load average:
+$ uptime 
+ 12:40:53 up  6:16,  2 users,  load average: 0.00, 0.00, 0.00
+
+OR
+
+$ cat /proc/loadavg

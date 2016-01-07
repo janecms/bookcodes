@@ -1,0 +1,6 @@
+Recipe: User administration script
+
+Script:
+=======
+user_adm.sh
+

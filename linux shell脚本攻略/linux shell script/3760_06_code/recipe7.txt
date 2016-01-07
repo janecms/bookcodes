@@ -1,0 +1,21 @@
+Recipe: Heavy compression squashfs filesystem
+
+Creating squashfs file
+======================
+
+$ mksquashfs SOURCES compressedfs.squashfs
+
+
+Mounting squashfs file
+======================
+# mkdir /mnt/squash
+# mount -o loop compressedfs.squashfs /mnt/squash
+
+
+Excluding files while creating squashfs file
+============================================
+
+$ sudo mksquashfs /etc test.squashfs -e /etc/passwd /etc/shadow
+
+$ sudo mksquashfs /etc test.squashfs -ef excludelist
+#Exclude list from file

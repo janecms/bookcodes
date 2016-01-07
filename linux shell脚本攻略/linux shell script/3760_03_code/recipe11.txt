@@ -1,0 +1,32 @@
+Recipe: Creating ISO files, Hybrid ISO 
+
+Create an ISO image from /dev/cdrom
+======================================
+
+# cat /dev/cdrom > image.iso
+
+# dd if=/dev/cdrom of=image.iso
+
+Create an ISO image from directory contents
+==============================================
+
+$ mkisofs -o image.iso source_dir/ -V "Label"
+
+Hybrid ISO that boots off pendrive or hard disk
+===============================================
+
+# isohybrid image.iso
+# dd if=image.iso of=/dev/sdb1 
+
+
+Burning an ISO commandline
+===========================
+
+# cdrecord -v dev=/dev/cdrom image.iso
+
+Playing with CD Rom tray
+========================
+
+$ eject
+$ eject -t
+

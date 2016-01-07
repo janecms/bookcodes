@@ -1,0 +1,4 @@
+$ ./generate_album.sh 
+Creating album..
+Album generated to index.html
+

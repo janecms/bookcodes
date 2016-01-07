@@ -1,0 +1,48 @@
+Recipe: Functions and arguments
+
+Function definisions
+====================
+
+function fname1()
+{
+	echo hello_func1;
+}
+
+fname2()
+{
+	echo hello_func2;
+}
+
+$ fname1;
+hello_func1
+
+$ fname2
+hello_func2
+
+
+Function with args
+==================
+fname()
+{
+	echo $1, $2; #Accessing arg1 and arg2
+	echo "$@"; # Printing all arguments as list at once
+	echo "$*"; # Similar to $@, but arguments taken as single entity
+	return 0; # Return value
+}
+
+$ fname arg1 arg2
+arg1, arg2
+arg1 arg2
+arg1 arg2
+
+Export function as global
+=========================
+export -f fname
+
+Getting return value for an executed command
+============================================
+$ cmd 
+$ echo $?
+
+
+

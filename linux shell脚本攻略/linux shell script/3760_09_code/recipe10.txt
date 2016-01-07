@@ -1,0 +1,6 @@
+Recipe: Bulk image resize and format conversion
+
+Script:
+=======
+image_help.sh
+

@@ -1,0 +1,20 @@
+Recipe: Logging with syslog
+
+To log to the syslog file /var/log/syslog,
+$ logger LOG_MESSAGE
+Eg:
+$ logger This is a test log line
+
+$ tail -n 1 /var/log/syslog
+Sep 29 07:47:44 slynux-laptop slynux: This is a test log line
+
+To log to the syslog with a tag specified,
+$ logger -t TAG This is a message
+
+$ tail -n 1 /var/log/syslog
+Sep 29 07:48:42 slynux-laptop TAG: This is a message
+
+
+Logging from file
+=================
+$ logger -f /var/log/source.log

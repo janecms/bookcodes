@@ -1,0 +1,12 @@
+Recipe: Spell check and dictionary manipulation
+
+$ look word filepath
+#Dictionary look
+
+$ grep "^word" filepath
+
+Scripts
+=======
+checkword.sh
+aspellcheck.sh
+

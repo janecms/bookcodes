@@ -1,0 +1,9 @@
+Script started on Tuesday 06 July 2010 09:50:34 AM IST
+]0;slynux@slynux-laptop: ~/packtpub/final_chapters/chapter-2 codeslynux@slynux-laptop:~/packtpub/final_chapters/chapter-2 code$ pwd
+/home/slynux/packtpub/final_chapters/chapter-2 code
+]0;slynux@slynux-laptop: ~/packtpub/final_chapters/chapter-2 codeslynux@slynux-laptop:~/packtpub/final_chapters/chapter-2 code$ l[Kdir
+output.session	recipe1.txt  timing.log
+]0;slynux@slynux-laptop: ~/packtpub/final_chapters/chapter-2 codeslynux@slynux-laptop:~/packtpub/final_chapters/chapter-2 code$ exit
+exit
+
+Script done on Tuesday 06 July 2010 09:50:59 AM IST

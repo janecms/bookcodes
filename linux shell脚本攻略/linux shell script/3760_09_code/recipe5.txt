@@ -1,0 +1,43 @@
+Recipe: Gathering system information
+
+Print hostname
+==============
+$ hostname
+OR
+$ uname -n
+
+uname
+=====
+$ uname -a # all
+
+$ uname -r # kernel release details
+
+$uname -m # machine type
+
+CPU details
+===========
+$ cat /proc/pcpuinfo
+
+Processor name
+==============
+$ cat /proc/cpuinfo | head -n 5 | tail -1
+
+RAM info
+========
+$ cat /proc/meminfo
+
+$ cat /proc/meminfo  | head -1
+MemTotal:        1026096 kB
+
+Partitions info
+===============
+$ cat /proc/partitions
+OR 
+$ fdisk -l
+
+Overall info
+============
+$ lshw
+
+
+

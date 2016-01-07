@@ -1,0 +1,6 @@
+apple 
+orange 
+gold 
+silver 
+steel 
+iron 

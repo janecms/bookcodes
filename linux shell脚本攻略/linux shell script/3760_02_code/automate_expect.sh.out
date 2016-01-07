@@ -1,0 +1,5 @@
+$ ./automate_expect.sh 
+spawn ./interactive.sh
+Enter number:1
+Enter name:hello
+You have entered 1, hello

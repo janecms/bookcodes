@@ -1,0 +1,26 @@
+Recipe: Sending messages to user terminals
+
+wall
+====
+$ cat message | wall
+OR
+$ wall < message                                                                      
+Broadcast Message from slynux@slynux-laptop                                    
+        (/dev/pts/1) at 12:54 ...                                              
+                                                                               
+This is a message  
+
+
+
+Enable messages
+===============
+$ mesg y
+
+Disable messages
+================
+$ mesg n
+
+Script
+======
+message_user.sh
+

@@ -1,0 +1,17 @@
+Recipe: Implementing head, tail, tac with awk
+
+head
+====
+
+$ awk 'NR <=10' file
+
+
+tail
+====
+
+$ awk '{ buffer[NR % 10] = $0; } END { for(i=1;i<11;i++) { print buffer[i%10] } }'
+
+tac
+===
+
+$ awk '{ buffer[NR] = $0; } END { for(i=NR; i>0; i--) { print buffer[i] } }'

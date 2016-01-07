@@ -1,0 +1,30 @@
+Recipe: Playing with variables and environment variables
+
+Environment variables
+=====================
+$ echo $PATH
+/home/slynux/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+
+$ export PATH="$PATH:/newpath/"
+$ echo $PATH
+/home/slynux/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/newpath/
+
+Length of string
+================
+$ var="hello"
+$ echo ${#var}
+5
+
+Current shell
+=============
+$ echo $SHELL
+/bin/bash
+
+$ echo $0
+bash
+
+
+Scripts
+=======
+variables.sh
+superuser.sh

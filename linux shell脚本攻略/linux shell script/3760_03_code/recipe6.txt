@@ -1,0 +1,20 @@
+Recipe: Making files immutable
+
+
+Making a file immutable
+=======================
+
+# chattr +i file
+
+$ sudo chattr +i file
+# Now file is made immutable
+
+# rm file 
+rm: cannot remove `file': Operation not permitted
+
+To remove immutable attribute
+=============================
+
+# chattr -i file
+
+

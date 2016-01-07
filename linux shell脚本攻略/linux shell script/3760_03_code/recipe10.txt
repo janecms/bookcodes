@@ -1,0 +1,49 @@
+Recipe: Loopback files and mounting 
+
+Note: Most of the commands in this file are to be executed as root. Hence the shell is "#"
+
+Create an ext4 filesystem on a file of size 1GB
+===================================================
+
+$ dd if=/dev/zero of=loobackfile.img bs=1G count=1
+1024+0 records in 
+1024+0 records out 
+1073741824 bytes (1.1 GB) copied, 37.3155 s, 28.8 MB/s
+
+# mkfs.ext4 loopbackfile.img
+
+$ sudo file loobackfile.img 
+loobackfile.img: Linux rev 1.0 ext4 filesystem data, UUID=c9d56c42-f8e6-4cbd-aeab-369d5056660a (extents) (large files) (huge files)
+
+Loopback mounting
+=================
+$ sudo mkdir /mnt/loopback
+# mount -o loop loopback.img /mnt/loopback
+
+
+Alternate way to mount loopback device
+======================================
+# losetup /dev/loop1 loopback.img
+# mount /dev/loop1 /mnt/loopback
+
+# losetup /dev/loop1 loopback.img
+# fdisk /dev/loop1
+
+
+
+# losetup -o 32256 /dev/loop2 loopback.img
+## With offset
+
+unmount
+=======
+# umount mountpoint
+
+Mount ISO file as loopback
+==============================
+
+# mkdir /mnt/iso
+# mount -o loop linux.iso /mnt/iso
+
+Flush changes immediately with sync
+===================================
+# sync

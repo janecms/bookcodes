@@ -1,0 +1,6 @@
+Recipe: Web photo album generator
+
+
+Scripts:
+========
+photo_album/generate_album.sh

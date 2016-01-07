@@ -1,0 +1,52 @@
+Recipe: Running commands on remote host with SSH
+
+$ ssh username@remote_host
+
+$ ssh mec@192.168.0.1 
+The authenticity of host '192.168.0.1 (192.168.0.1)' can't be established. 
+RSA key fingerprint is 2b:b4:90:79:49:0a:f1:b3:8a:db:9f:73:2d:75:d6:f9. 
+Are you sure you want to continue connecting (yes/no)? yes 
+Warning: Permanently added '192.168.0.1' (RSA) to the list of known hosts. 
+Password: 
+
+Last login: Fri Sep  3 05:15:21 2010 from 192.168.0.82 
+mec@proxy-1:~$ 
+
+$ ssh user@host 'COMMANDS'
+
+Eg:
+$ ssh mec@192.168.0.1 'whoami'
+Password: 
+mec 
+
+
+$ echo  "COMMANDS" | ssh user@remote_host  > stdout.txt 2> errors.txt
+
+$ ssh mec@192.168.0.1  "echo user: $(whoami);echo OS: $(uname)"
+Password: 
+user: slynux 
+OS: Linux 
+
+
+SSH with different port
+=======================
+$ ssh user@locahost -p 422
+
+SSH with compression
+====================
+
+$ ssh -C user@hostname COMMANDS
+
+Redirecting data into stdin of remote host shell commands
+=========================================================
+$ echo "text" | ssh user@remote_host ' cat >> list'
+
+OR
+
+$ ssh user@remote_host ' cat >> list'  < file
+
+
+
+Scripts
+=======
+uptime.sh

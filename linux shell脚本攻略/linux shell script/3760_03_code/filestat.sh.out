@@ -1,0 +1,8 @@
+$ ./filestat.sh .
+File types and counts :
+Bourne-Again shell script text executable : 2
+UTF-8 Unicode English text : 1
+ASCII text : 13
+empty : 3
+UTF-8 Unicode text : 1
+ASCII English text : 7

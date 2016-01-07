@@ -1,0 +1,45 @@
+Recipe: Setup Ethernet and Wireless LAN with script
+
+
+iwlist
+======
+
+
+$ iwlist scan
+lo        Interface doesn't support scanning.
+
+eth1      Interface doesn't support scanning.
+
+wlan0     Scan completed :
+          Cell 01 - Address: 00:12:17:7B:1C:65
+                    Channel:11
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=27/70  Signal level=-83 dBm  
+                    Encryption key:on
+                    ESSID:"model-2"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=000000035d9a7759
+                    Extra: Last beacon: 25068ms ago
+                    IE: Unknown: 00076D6F64656C2D32
+                    IE: Unknown: 010882848B962430486C
+                    IE: Unknown: 03010B
+                    IE: Unknown: 2A0104
+                    IE: Unknown: 2F0104
+                    IE: Unknown: 32040C121860
+                    IE: Unknown: DD05001018010B
+
+vboxnet0  Interface doesn't support scanning.
+
+pan0      Interface doesn't support scanning.
+
+
+
+Scripts
+=======
+etherconnect.sh
+wlan_connect.sh
+
+

@@ -1,0 +1,4 @@
+1	mac		2000
+2	winxp		4000
+3	bsd		1000
+4	linux		1000

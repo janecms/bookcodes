@@ -1,0 +1,18 @@
+Recipe: Printing lines in reverse order
+
+$ tac file
+
+$ seq 5 | tac 
+5 
+4 
+3 
+2 
+1
+
+Print lines in reverse order using awk
+======================================
+
+$ seq 9 | \
+awk '{ lifo[NR]=$0; lno=NR } 
+END{ for(;lno>-1;lno--){ print lifo[lno]; } 
+}'

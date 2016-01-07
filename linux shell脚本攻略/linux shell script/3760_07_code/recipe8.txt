@@ -1,0 +1,14 @@
+Recipe: Mounting remote drive at local mount point
+
+Mounting
+========
+# sshfs user@remotehost:/home/path /mnt/mountpoint
+Password:
+Issue user password.
+
+
+Unmount
+=======
+# umount /mnt/mountpoint
+
+

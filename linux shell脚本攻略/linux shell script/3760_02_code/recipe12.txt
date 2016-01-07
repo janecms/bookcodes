@@ -1,0 +1,11 @@
+Recipe: Automating interactive input
+
+
+$ echo -e "1\nhello\n"  > input.data
+
+
+
+Scripts
+=======
+interactive.sh
+automate_expect

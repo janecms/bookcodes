@@ -1,0 +1,17 @@
+Recipe: Enumerating file type statistics
+
+To get the file type
+======================
+
+$ file filename
+
+$ file /etc/passwd 
+/etc/passwd: ASCII text
+
+$ file -b filename
+ASCII text
+
+Scripts
+=======
+
+filestat.sh

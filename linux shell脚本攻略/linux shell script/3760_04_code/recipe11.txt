@@ -1,0 +1,12 @@
+Recipe: Printing nth word or column in a file or line
+
+Print 5th field of every lines in a file
+========================================
+$ awk '{ print $5 }' filename
+
+
+$ ls -l | awk '{ print $1" :  " $8 }'
+-rw-r--r-- :  delimited_data.txt 
+-rw-r--r-- :  obfuscated.txt 
+-rw-r--r-- :  paste1.txt 
+-rw-r--r-- :  paste2.txt 

@@ -1,0 +1,135 @@
+Recipe: Basic regular expression primer
+
+Grep Syntax
+===========
+user@host:~$ grep match_pattern filename
+
+
+user@host:~$ grep "match_pattern" filename
+
+
+Stdin
+=====
+user@host:~$ echo -e "this is a word\nnext line" | grep word
+
+Multiple Files Input
+====================
+user@host:~ $ grep "match_text" file1 file2 file3 ...
+
+Colouring in grep
+=================
+user@host:~ $ grep word filename --color auto
+
+
+Regular expression
+==================
+user@host:~ $ grep -E "[a-z]+"
+
+Regular expression with egrep
+=============================
+user@host:~ $ egrep "[a-z]+"
+
+
+Print only matching portion
+===========================
+user@host:~ $ echo this is a line. | grep -o -E "[a-z]+\."
+line.
+
+Print only matching portion with egrep
+======================================
+user@host:~ $ echo this is a line. | egrep -o "[a-z]+\."
+line.
+
+Invert matching
+===============
+user@host:~ $ grep -v  match_pattern file
+
+
+Counting matches
+================
+user@host:~ $ grep -c "text" filename
+
+
+user@host:~ $ echo -e "1 2 3 4\nhello\n5 6" | egrep  -c "[0-9]"
+2
+
+user@host:~ $ echo -e "1 2 3 4\nhello\n5 6" | egrep  -o "[0-9]" | wc -l
+6
+
+
+user@host:~ $ cat sample1.txt
+gnu is not unix
+linux is fun
+bash is art
+
+
+user@host:~ $ cat sample2.txt
+planet linux
+
+
+user@host:~ $ grep linux -n sample1.txt
+2:linux is fun
+
+user@host:~ $ cat sample1.txt | grep linux -n
+2:linux is fun
+
+
+user@host:~ $ grep linux -n sample1.txt sample2.txt
+sample1.txt:2:linux is fun
+sample2.txt:2:planet linux
+
+
+user@host:~ $ echo gnu is not unix | grep -b -o "not"
+7:not
+
+
+user@host:~ $ grep -l linux sample1.txt sample2.txt
+sample1.txt
+sample2.txt
+
+
+user@host:~ $ grep "text" . -R -n
+
+
+user@host:~ $ cd src_dir
+user@host:~ $ grep "test_function()" . -R -n
+./miscutils/test.c:16:test_function();
+
+
+user@host:~ $ echo hello world | grep -o "HELLO"
+hello
+
+
+
+user@host:~ $ grep -e "pattern1" -e "pattern
+ 
+
+user@host:~ $ echo this is a line of text | grep -e "this" -e "line" -o
+this
+line
+
+
+user@host:~ $ grep -f pattern_file source_filename
+
+
+
+user@host:~ $ cat pat_file
+hello
+
+
+user@host:~ $ echo hello this is cool | grep -f pattern 
+hello this is cool
+
+
+user@host:~ $ grep "main()" . -r  --include *.{c,cpp}
+
+
+user@host:~ $ grep "main()"  . -r –-exclude "README" 
+
+
+
+Scripts
+=======
+
+silent_grep.sh
+

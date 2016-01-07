@@ -1,0 +1,6 @@
+$ ./tweets.sh tweet Thinking of writing a X version of wall command "#bash" 
+Tweeted :) 
+
+$ ./tweets.sh read 
+bot: A tweet line
+t3rm1n4l: Thinking of writing a X version of wall command #bash 
