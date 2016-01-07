@@ -1,0 +1,16 @@
+<!DOCTYPE validators PUBLIC
+        "-//OpenSymphony Group//XWork Validator 1.0.2//EN"
+        "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+    <field name="max">
+        <field-validator type="fieldexpression">
+            <param name="expression">
+                max > min
+            </param>
+            <message>
+                Maximum temperature must be greater than Minimum temperature
+            </message>
+        </field-validator>
+    </field>
+</validators>

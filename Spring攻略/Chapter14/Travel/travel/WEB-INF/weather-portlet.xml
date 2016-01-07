@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean
+        class="org.springframework.web.portlet.handler.PortletModeHandlerMapping">
+        <property name="portletModeMap">
+            <map>
+                <entry key="view" value-ref="weatherController" />
+            </map>
+        </property>
+    </bean>
+
+    <bean
+        class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass"
+            value="org.springframework.web.servlet.view.JstlView" />
+        <property name="prefix" value="/WEB-INF/jsp/weather/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+
+    <bean id="weatherController"
+        class="com.apress.springrecipes.travel.weather.WeatherController">
+        <property name="weatherService" ref="weatherService" />
+    </bean>
+</beans>

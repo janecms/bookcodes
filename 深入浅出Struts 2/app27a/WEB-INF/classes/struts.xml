@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <package name="app27a" extends="struts-default">
+        <action name="A">
+        	<result>/jsp/A.jsp</result>
+        </action>
+        <action name="AutoCompleter1" class="app27a.AutoCompleterSupport">
+        	<result>/jsp/AutoCompleter1.jsp</result>
+        </action>
+        <action name="AutoCompleter2" class="app27a.AutoCompleterSupport">
+        	<result>/jsp/AutoCompleter2.jsp</result>
+        </action>
+        <action name="AutoCompleter3" class="app27a.AutoCompleterSupport">
+        	<result>/jsp/AutoCompleter3.jsp</result>
+        </action>
+        <action name="ShowSelection" class="app27a.AutoCompleterSupport">
+        	<result>/jsp/ShowSelection.jsp</result>
+        </action>
+        <action name="CarMakesAsJSON1" class="app27a.AutoCompleterSupport">
+        	<result>/jsp/CarMakesAsJSON1.jsp</result>
+        </action>
+        <action name="CarMakesAsJSON2" class="app27a.AutoCompleterSupport">
+        	<result>/jsp/CarMakesAsJSON2.jsp</result>
+        </action>
+        <action name="Bind">
+        	<result>/jsp/Bind.jsp</result>
+        </action>
+        <action name="DateTimePicker">
+        	<result>/jsp/DateTimePicker.jsp</result>
+        </action>
+        <action name="Div1">
+        	<result>/jsp/Div1.jsp</result>
+        </action>
+        <action name="Div2">
+        	<result>/jsp/Div2.jsp</result>
+        </action>
+        <action name="Div3">
+        	<result>/jsp/Div3.jsp</result>
+        </action>
+        <action name="Head">
+        	<result>/jsp/Head.jsp</result>
+        </action>
+        <action name="Submit">
+        	<result>/jsp/Submit.jsp</result>
+        </action>
+        <action name="TabbedPanel">
+        	<result>/jsp/TabbedPanel.jsp</result>
+        </action>
+        <action name="TextArea">
+        	<result>/jsp/TextArea.jsp</result>
+        </action>
+        <action name="Tree1">
+        	<result>/jsp/Tree1.jsp</result>
+        </action>
+        <action name="Tree2" class="app27a.TreeSupport">
+        	<result>/jsp/Tree2.jsp</result>
+        </action>
+        <action name="ServerTime" class="app27a.ServerTime">
+        	<result>/jsp/ServerTime.jsp</result>
+        </action>
+        
+    </package>
+</struts>

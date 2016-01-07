@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+
+    <package name="app05a" extends="struts-default">
+        <action name="CheckBox" class="app05a.CheckBoxTestAction">
+            <result>/jsp/CheckBox.jsp</result>
+        </action>
+        <action name="CheckBox2" class="app05a.CheckBoxTest2Action">
+            <result>/jsp/CheckBox2.jsp</result>
+        </action>
+        <action name="CheckBoxList" class="app05a.CheckBoxListTestAction">
+            <result>/jsp/CheckBoxList.jsp</result>
+        </action>
+        <action name="ComboBox" class="app05a.ComboBoxTestAction">
+            <result>/jsp/ComboBox.jsp</result>
+        </action>
+        <action name="DoubleSelect" class="app05a.DoubleSelectTestAction">
+            <result>/jsp/DoubleSelect.jsp</result>
+        </action>
+        <action name="Label">
+            <result>/jsp/Label.jsp</result>
+        </action>
+        <action name="OptGroup" class="app05a.OptGroupTestAction">
+            <result>/jsp/OptGroup.jsp</result>
+        </action>
+        <action name="OptionTransferSelect" class="app05a.OptionTransferSelectTestAction">
+            <result>/jsp/OptionTransferSelect.jsp</result>
+        </action>
+        <action name="Radio" class="app05a.RadioTestAction">
+            <result>/jsp/Radio.jsp</result>
+        </action>
+        <action name="Select" class="app05a.SelectTestAction">
+            <result>/jsp/Select.jsp</result>
+        </action>
+        <action name="TextField" class="app05a.TextFieldTestAction">
+            <result>/jsp/TextField.jsp</result>
+        </action>
+        <action name="TextArea" class="app05a.TextAreaTestAction">
+            <result>/jsp/TextArea.jsp</result>
+        </action>
+        <action name="UpDownSelect" class="app05a.UpDownSelectTestAction">
+            <result>/jsp/UpDownSelect.jsp</result>
+        </action>
+    </package>
+
+</struts>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/dist/spring.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/jakarta-commons/commons-logging.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/jruby/jruby.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/asm/asm-2.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/concurrent/backport-util-concurrent.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/cglib/cglib-nodep-2.1_3.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/groovy/groovy-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/antlr/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/bsh/bsh-2.0b4.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

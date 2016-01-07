@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+
+    <package name="app04a" extends="struts-default">
+        <action name="Test" class="app04a.TestAction">
+            <result>/jsp/Test.jsp</result>
+        </action>
+        <action name="Test2" class="app04a.Test2Action">
+            <result>/jsp/Test2.jsp</result>
+        </action>
+    </package>
+
+</struts>

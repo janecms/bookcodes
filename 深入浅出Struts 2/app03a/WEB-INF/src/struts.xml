@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <package name="app03a" extends="struts-default">
+
+        <default-action-ref name="CatchAll"/>
+        <global-results>
+            <result name="error">/jsp/Error.jsp</result>
+        </global-results>
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+        
+        <action name="Product_input">
+            <result>/jsp/ProductForm.jsp</result>
+            <result name="login">/jsp/Login.jsp</result>
+        </action>
+
+        <action name="Product_save" class="app03a.Product">
+            <result type="dispatcher">/jsp/ProductDetails.jsp</result>
+            <result name="input">/jsp/ProductForm.jsp</result>
+        </action>
+
+
+        <action name="User_input">
+            <result>
+                <param name="location">/jsp/Login.jsp</param>
+            </result>
+        </action>
+        <action name="User_login" class="app03a.User" method="login">
+            <result name="success">/jsp/Menu.jsp</result>
+            <result name="input">/jsp/Login.jsp</result>
+        </action>
+        <action name="User_logout" class="app03a.User" method="logout">
+            <result name="success">/jsp/Login.jsp</result>
+        </action>
+        
+        
+        <action name="CatchAll">
+        	<result type="httpheader">
+        	    <param name="status">404</param>
+        	</result>
+        </action>
+        <action name="RedirectTest" class="app03a.TestUser">
+            <result type="redirect-action">
+                <param name="actionName">User_input</param>
+            </result>    
+        </action>
+
+    </package>
+
+    <!--
+    <package name="wildcardMappingTest" namespace="/wild" extends="struts-default">
+        <action name="Book_add" class="app03a.Book" method="add">
+            <result>/jsp/Book.jsp</result>
+        </action>
+        <action name="Book_edit" class="app03a.Book" method="edit">
+            <result>/jsp/Book.jsp</result>
+        </action>
+        <action name="Book_delete" class="app03a.Book" method="delete">
+            <result>/jsp/Book.jsp</result>
+        </action>
+        
+        <action name="Author_add" class="app03a.Author" method="add">
+            <result>/jsp/Author.jsp</result>
+        </action>
+        <action name="Author_edit" class="app03a.Author" method="edit">
+            <result>/jsp/Author.jsp</result>
+        </action>
+        <action name="Author_delete" class="app03a.Author" method="delete">
+            <result>/jsp/Author.jsp</result>
+        </action>
+    </package>
+    -->
+    <!--
+    <package name="wildcardMappingTest" namespace="/wild" extends="struts-default">
+        <action name="*_*" class="app03a.{1}" method="{2}">
+            <result>/jsp/{1}.jsp</result>
+        </action>
+    </package>
+    -->
+
+    <package name="dynamicMethodInvocation" namespace="/dmi" extends="struts-default">
+        <action name="Book" class="app03a.Book">
+            <result>/jsp/Book.jsp</result>
+        </action>
+    </package> 
+
+</struts>

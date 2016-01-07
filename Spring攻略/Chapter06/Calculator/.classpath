@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/dist/spring.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/jakarta-commons/commons-logging.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/log4j/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/aspectj/aspectjweaver.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/aspectj/aspectjrt.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/asm/asm-2.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/asm/asm-commons-2.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/asm/asm-util-2.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/dist/weaving/spring-aspects.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,28 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean
+        class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+
+    <bean name="/messageList.htm"
+        class="com.apress.springrecipes.board.web.MessageListController">
+        <property name="messageBoardService" ref="messageBoardService" />
+    </bean>
+
+    <bean name="/messagePost.htm"
+        class="com.apress.springrecipes.board.web.MessagePostController">
+        <property name="messageBoardService" ref="messageBoardService" />
+        <property name="formView" value="messagePost" />
+        <property name="successView" value="redirect:messageList.htm" />
+    </bean>
+
+    <bean name="/messageDelete.htm"
+        class="com.apress.springrecipes.board.web.MessageDeleteController">
+        <property name="messageBoardService" ref="messageBoardService" />
+    </bean>
+</beans>

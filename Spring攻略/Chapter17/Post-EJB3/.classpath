@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/openejb-3.0/lib/geronimo-ejb_3.0_spec-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/dist/spring.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/jakarta-commons/commons-logging.jar"/>
+	<classpathentry kind="lib" path="C:/openejb-3.0/lib/openejb-client-3.0-beta-1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+
+    <package name="app15b" extends="struts-default">
+        <action name="Pay_input">
+            <result>/jsp/Payment.jsp</result>
+        </action>
+        <action name="Pay" class="app15b.Payment">
+            <interceptor-ref name="tokenSession"/>
+            <interceptor-ref name="basicStack"/>
+            <result name="invalid.token">/jsp/Error.jsp</result>
+            <result name="input">/jsp/Payment.jsp</result>
+            <result>/jsp/Thanks.jsp</result>
+        </action>
+    </package>
+
+</struts>

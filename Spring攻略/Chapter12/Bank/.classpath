@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/junit/junit-4.4.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/testng/testng-5.5-jdk15.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/easymock/easymock.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/dist/spring.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/jakarta-commons/commons-logging.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/dist/modules/spring-webmvc.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/j2ee/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/dist/modules/spring-test.jar"/>
+	<classpathentry kind="lib" path="C:/db-derby-10.2.2.0/lib/derbyclient.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

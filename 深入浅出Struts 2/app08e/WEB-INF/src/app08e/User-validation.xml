@@ -1,0 +1,28 @@
+<!DOCTYPE validators PUBLIC
+        "-//OpenSymphony Group//XWork Validator 1.0.2//EN"
+        "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+    <field name="userName">
+        <field-validator type="requiredstring">
+            <message>User Name must not be empty</message>
+        </field-validator>
+    </field>
+    <field name="password">
+        <field-validator type="requiredstring">
+            <message>Password must not be empty</message>
+        </field-validator>
+    </field>
+    <field name="password">
+        <field-validator type="strongpassword">
+            <param name="minLength">8</param>
+            <message>
+                Password must be at least 8 characters long
+                and contains at least one lower case character,
+                one upper case character, and a digit.
+            </message>
+        </field-validator>
+    </field>
+</validators>
+
+

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry path="WEB-INF/src" kind="src">
+		<attributes>
+		</attributes>
+	</classpathentry>
+	<classpathentry path="org.eclipse.jdt.launching.JRE_CONTAINER" kind="con">
+		<attributes>
+		</attributes>
+	</classpathentry>
+	<classpathentry path="WEB-INF/lib/commons-beanutils-1.7.0.jar" kind="lib">
+		<attributes>
+		</attributes>
+	</classpathentry>
+	<classpathentry path="WEB-INF/lib/commons-chain-1.1.jar" kind="lib">
+		<attributes>
+		</attributes>
+	</classpathentry>
+	<classpathentry path="WEB-INF/lib/commons-codec-1.3.jar" kind="lib">
+		<attributes>
+		</attributes>
+	</classpathentry>
+	<classpathentry path="WEB-INF/lib/commons-collections-3.1.jar" kind="lib">
+		<attributes>
+		</attributes>
+	</classpathentry>
+	<classpathentry path="WEB-INF/lib/commons-digester-1.6.jar" kind="lib">
+		<attributes>
+		</attributes>
+	</classpathentry>
+	<classpathentry path="WEB-INF/lib/commons-el-1.0.jar" kind="lib">
+		<attributes>
+		</attributes>
+	</classpathentry>
+	<classpathentry path="WEB-INF/lib/commons-fileupload-1.1.1.jar" kind="lib">
+		<attributes>
+		</attributes>
+	</classpathentry>
+	<classpathentry path="WEB-INF/lib/commons-io-1.1.jar" kind="lib">
+		<attributes>
+		</attributes>
+	</classpathentry>
+	<classpathentry path="WEB-INF/lib/commons-lang-2.1.jar" kind="lib">
+		<attributes>
+		</attributes>
+	</classpathentry>
+	<classpathentry path="WEB-INF/lib/commons-logging-1.1.jar" kind="lib">
+		<attributes>
+		</attributes>
+	</classpathentry>
+	<classpathentry path="WEB-INF/lib/commons-validator-1.3.0.jar" kind="lib">
+		<attributes>
+		</attributes>
+	</classpathentry>
+	<classpathentry path="C:/apps/tomcat6010/lib/servlet-api.jar" kind="lib">
+		<attributes>
+		</attributes>
+	</classpathentry>
+	<classpathentry path="WEB-INF/lib/freemarker-2.3.8.jar" kind="lib">
+		<attributes>
+		</attributes>
+	</classpathentry>
+	<classpathentry path="WEB-INF/lib/ognl-2.6.11.jar" kind="lib">
+		<attributes>
+		</attributes>
+	</classpathentry>
+	<classpathentry path="WEB-INF/lib/struts2-core-2.0.9.jar" kind="lib">
+		<attributes>
+		</attributes>
+	</classpathentry>
+	<classpathentry path="WEB-INF/lib/xwork-2.0.4.jar" kind="lib">
+		<attributes>
+		</attributes>
+	</classpathentry>
+	<classpathentry path="WEB-INF/classes" kind="output"/>
+</classpath>

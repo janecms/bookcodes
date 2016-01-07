@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <package name="app12b" extends="struts-default">
+        <action name="File">
+      		<result>/jsp/MultipleUpload.jsp</result>
+	    </action>
+        <action name="File_multipleUpload" 
+        		class="app12b.MultipleFileUploadAction" method="upload">
+        	<result name="input">/jsp/MultipleUpload.jsp</result>
+		    <result>/jsp/MultipleUpload.jsp</result>
+	    </action>
+    </package>
+
+</struts>

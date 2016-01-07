@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="weather/WEB-INF/lib/spring.jar"/>
+	<classpathentry kind="lib" path="weather/WEB-INF/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="weather/WEB-INF/lib/spring-ws-1.5.0-m1.jar"/>
+	<classpathentry kind="lib" path="weather/WEB-INF/lib/activation-1.1.1.jar"/>
+	<classpathentry kind="lib" path="weather/WEB-INF/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="weather/WEB-INF/lib/saaj-api-1.3.jar"/>
+	<classpathentry kind="lib" path="weather/WEB-INF/lib/saaj-impl-1.3.jar"/>
+	<classpathentry kind="lib" path="weather/WEB-INF/lib/stax-api-1.0.1.jar"/>
+	<classpathentry kind="lib" path="weather/WEB-INF/lib/castor-1.1.1.jar"/>
+	<classpathentry kind="lib" path="weather/WEB-INF/lib/xercesImpl-2.8.1.jar"/>
+	<classpathentry kind="output" path="weather/WEB-INF/classes"/>
+</classpath>

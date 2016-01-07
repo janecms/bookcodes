@@ -1,0 +1,33 @@
+<!DOCTYPE validators PUBLIC
+        "-//OpenSymphony Group//XWork Validator 1.0.2//EN"
+        "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+    <field name="streetName">
+        <field-validator type="requiredstring">
+            <message>Street Name must not be empty</message>
+        </field-validator>
+    </field>
+    <field name="streetNumber">
+        <field-validator type="requiredstring">
+            <message>Street Number must not be empty</message>
+        </field-validator>
+    </field>
+    <field name="city">
+        <field-validator type="requiredstring">
+            <message>City must not be empty</message>
+        </field-validator>
+    </field>
+    <field name="state">
+        <field-validator type="requiredstring">
+            <message>State must not be empty</message>
+        </field-validator>
+    </field>
+    <field name="zipCode">
+        <field-validator type="requiredstring">
+            <message>Zip Code must not be empty</message>
+        </field-validator>
+    </field>
+</validators>
+
+

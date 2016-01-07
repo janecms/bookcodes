@@ -1,0 +1,43 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean id="fileCopier"
+        class="com.apress.springrecipes.replicator.FileCopierImpl" />
+
+    <bean id="documentReplicator"
+        class="com.apress.springrecipes.replicator.FileReplicatorImpl">
+        <property name="srcDir" value="c:/documents" />
+        <property name="destDir" value="d:/documents" />
+        <property name="fileCopier" ref="fileCopier" />
+    </bean>
+
+    <bean id="rmiRegistry"
+        class="org.springframework.remoting.rmi.RmiRegistryFactoryBean" />
+
+    <bean id="connectorServer"
+        class="org.springframework.jmx.support.ConnectorServerFactoryBean"
+        depends-on="rmiRegistry">
+        <property name="serviceUrl" value=
+            "service:jmx:rmi://localhost/jndi/rmi://localhost:1099/replicator" />
+    </bean>
+
+    <bean id="mbeanServer"
+        class="org.springframework.jmx.support.MBeanServerFactoryBean">
+        <property name="locateExistingServerIfPossible" value="true" />
+    </bean>
+
+    <bean id="mbeanExporter"
+        class="org.springframework.jmx.export.annotation.AnnotationMBeanExporter">
+        <property name="defaultDomain" value="bean" />
+        <property name="notificationListenerMappings">
+            <map>
+                <entry key="bean:name=documentReplicator,type=FileReplicatorImpl">
+                    <bean
+                        class="com.apress.springrecipes.replicator.ReplicationNotificationListener" />
+                </entry>
+            </map>
+        </property>
+    </bean>
+</beans>

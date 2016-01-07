@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+
+    <package name="app08a" extends="struts-default">
+        <action name="Conversion1">
+            <result>/jsp/Conversion.jsp</result>
+        </action>
+        <action name="Conversion2" class="app08a.ConversionTestAction">
+            <result name="input">/jsp/Conversion.jsp</result>
+            <result>/jsp/Conversion2.jsp</result>
+        </action>
+
+        <action name="Date1">
+            <result>/jsp/Date.jsp</result>
+        </action>
+        <action name="Date2" class="app08a.DateTestAction">
+            <result name="input">/jsp/Date.jsp</result>
+            <result>/jsp/Thanks.jsp</result>
+        </action>
+
+        <action name="Email1">
+            <result>/jsp/Email.jsp</result>
+        </action>
+        <action name="Email2" class="app08a.EmailTestAction">
+            <result name="input">/jsp/Email.jsp</result>
+            <result>/jsp/Thanks.jsp</result>
+        </action>
+
+        <action name="Expression1">
+            <result>/jsp/Expression.jsp</result>
+        </action>
+        <action name="Expression2" class="app08a.ExpressionTestAction">
+            <result name="input">/jsp/Expression.jsp</result>
+            <result>/jsp/Thanks.jsp</result>
+        </action>
+
+        <action name="FieldExpression1">
+            <result>/jsp/FieldExpression.jsp</result>
+        </action>
+        <action name="FieldExpression2" class="app08a.FieldExpressionTestAction">
+            <result name="input">/jsp/FieldExpression.jsp</result>
+            <result>/jsp/Thanks.jsp</result>
+        </action>
+        
+        <action name="Int1">
+            <result>/jsp/Int.jsp</result>
+        </action>
+        <action name="Int2" class="app08a.IntTestAction">
+            <result name="input">/jsp/Int.jsp</result>
+            <result>/jsp/Thanks.jsp</result>
+        </action>
+
+        <action name="RegEx1">
+            <result>/jsp/RegEx.jsp</result>
+        </action>
+        <action name="RegEx2" class="app08a.RegExTestAction">
+            <result name="input">/jsp/RegEx.jsp</result>
+            <result>/jsp/Thanks.jsp</result>
+        </action>
+
+        <action name="Required1">
+            <result>/jsp/Required.jsp</result>
+        </action>
+        <action name="Required2" class="app08a.RequiredTestAction">
+            <result name="input">/jsp/Required.jsp</result>
+            <result>/jsp/Thanks.jsp</result>
+        </action>
+
+        <action name="RequiredString1">
+            <result>/jsp/RequiredString.jsp</result>
+        </action>
+        <action name="RequiredString2" class="app08a.RequiredStringTestAction">
+            <result name="input">/jsp/RequiredString.jsp</result>
+            <result>/jsp/Thanks.jsp</result>
+        </action>
+
+        <action name="StringLength1">
+            <result>/jsp/StringLength.jsp</result>
+        </action>
+        <action name="StringLength2" class="app08a.StringLengthTestAction">
+            <result name="input">/jsp/StringLength.jsp</result>
+            <result>/jsp/Thanks.jsp</result>
+        </action>
+
+        <action name="Url1">
+            <result>/jsp/Url.jsp</result>
+        </action>
+        <action name="Url2" class="app08a.UrlTestAction">
+            <result name="input">/jsp/Url.jsp</result>
+            <result>/jsp/Thanks.jsp</result>
+        </action>
+
+        <action name="Visitor1">
+            <result>/jsp/Visitor.jsp</result>
+        </action>
+        <action name="Visitor2" class="app08a.VisitorTestAction">
+            <result name="input">/jsp/Visitor.jsp</result>
+            <result>/jsp/Thanks.jsp</result>
+        </action>
+    </package>
+
+</struts>

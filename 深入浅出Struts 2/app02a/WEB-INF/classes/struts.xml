@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- remove these constant elements in production -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <package name="app02a" namespace="" extends="struts-default">
+        <action name="Product_input">
+            <result>/jsp/Product.jsp</result>
+        </action>
+        <action name="Product_save" class="app02a.Product" method="execute">
+            <result>/jsp/Details.jsp</result>
+        </action>
+    </package>
+
+</struts>

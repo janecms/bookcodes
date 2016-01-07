@@ -1,0 +1,156 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean id="measurementInterceptor"
+        class="com.apress.springrecipes.court.web.MeasurementInterceptor" />
+
+    <bean id="localeResolver"
+        class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+        <property name="cookieName" value="language" />
+        <property name="cookieMaxAge" value="3600" />
+        <property name="defaultLocale" value="en" />
+    </bean>
+
+    <bean id="localeChangeInterceptor"
+        class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+        <property name="paramName" value="language" />
+    </bean>
+
+    <bean id="messageSource"
+        class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="messages" />
+    </bean>
+
+    <bean
+        class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <prop
+                    key="com.apress.springrecipes.court.service.ReservationNotAvailableException">
+                    reservationNotAvailable
+                </prop>
+                <prop key="java.lang.Exception">error</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean
+        class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="interceptors">
+            <list>
+                <ref bean="measurementInterceptor" />
+                <ref bean="localeChangeInterceptor" />
+            </list>
+        </property>
+        <property name="mappings">
+            <props>
+                <prop key="/index.htm">welcomeController</prop>
+                <prop key="/main.htm">welcomeController</prop>
+                <prop key="/reservationSuccess.htm">
+                    reservationSuccessController
+                </prop>
+            </props>
+        </property>
+        <property name="order" value="0" />
+    </bean>
+
+    <bean
+        class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping">
+        <property name="interceptors">
+            <list>
+                <ref bean="measurementInterceptor" />
+                <ref bean="localeChangeInterceptor" />
+            </list>
+        </property>
+        <property name="caseSensitive" value="true" />
+        <property name="order" value="1" />
+    </bean>
+
+    <bean id="welcomeController"
+        class="com.apress.springrecipes.court.web.WelcomeController">
+        <property name="supportedMethods" value="GET" />
+        <property name="cacheSeconds" value="60" />
+    </bean>
+
+    <bean id="reservationQueryController"
+        class="com.apress.springrecipes.court.web.ReservationQueryController">
+        <property name="reservationService" ref="reservationService" />
+    </bean>
+
+    <bean id="reservationFormController"
+        class="com.apress.springrecipes.court.web.ReservationFormController">
+        <property name="reservationService" ref="reservationService" />
+        <property name="formView" value="reservationForm" />
+        <property name="successView" value="reservationSuccessRedirect" />
+        <property name="validator">
+            <bean
+                class="com.apress.springrecipes.court.domain.ReservationValidator" />
+        </property>
+    </bean>
+
+    <bean id="reservationSuccessController"
+        class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="reservationSuccess" />
+    </bean>
+
+    <bean id="aboutController"
+        class="com.apress.springrecipes.court.web.AboutController">
+        <property name="viewName" value="about" />
+        <property name="email" value="reservation@court.com" />
+    </bean>
+
+    <bean id="periodicReservationController"
+        class="com.apress.springrecipes.court.web.PeriodicReservationController">
+        <property name="reservationService" ref="reservationService" />
+        <property name="pages">
+            <list>
+                <value>reservationCourtForm</value>
+                <value>reservationTimeForm</value>
+                <value>reservationPlayerForm</value>
+            </list>
+        </property>
+        <property name="validator">
+            <bean
+                class="com.apress.springrecipes.court.domain.PeriodicReservationValidator" />
+        </property>
+    </bean>
+
+    <bean id="memberController"
+        class="com.apress.springrecipes.court.web.MemberController">
+        <property name="memberService" ref="memberService" />
+        <property name="methodNameResolver">
+            <bean
+                class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+                <property name="mappings">
+                    <props>
+                        <prop key="/member/add.htm">addMember</prop>
+                        <prop key="/member/remove.htm">
+                            removeMember
+                        </prop>
+                        <prop key="/member/list.htm">listMember</prop>
+                    </props>
+                </property>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="reservationSummaryController"
+        class="com.apress.springrecipes.court.web.ReservationSummaryController">
+        <property name="reservationService" ref="reservationService" />
+    </bean>
+
+    <bean
+        class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+        <property name="basename" value="views" />
+        <property name="order" value="0" />
+    </bean>
+
+    <bean
+        class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="suffix" value=".jsp" />
+        <property name="order" value="1" />
+    </bean>
+</beans>

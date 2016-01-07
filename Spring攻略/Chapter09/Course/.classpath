@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/hibernate/hibernate3.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/antlr/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/asm/asm-2.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/cglib/cglib-nodep-2.1_3.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/jakarta-commons/commons-collections.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/jakarta-commons/commons-logging.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/dom4j/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/ehcache/ehcache-1.2.4.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/j2ee/jta.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/log4j/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="C:/db-derby-10.2.2.0/lib/derbyclient.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/j2ee/persistence.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/hibernate/hibernate-annotations.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/hibernate/hibernate-commons-annotations.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/hibernate/hibernate-entitymanager.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/hibernate/jboss-archive-browsing.jar"/>
+	<classpathentry kind="lib" path="C:/hibernate-3.2/lib/javassist.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/dist/spring.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

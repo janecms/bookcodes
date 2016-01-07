@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/dist/spring.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/jakarta-commons/commons-logging.jar"/>
+	<classpathentry kind="lib" path="C:/db-derby-10.2.2.0/lib/derbyclient.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/aspectj/aspectjweaver.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/dist/weaving/spring-aspects.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

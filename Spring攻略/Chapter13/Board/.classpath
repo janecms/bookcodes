@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="board/WEB-INF/lib/spring.jar"/>
+	<classpathentry kind="lib" path="board/WEB-INF/lib/spring-webmvc.jar"/>
+	<classpathentry kind="lib" path="C:/spring-framework-2.5/lib/j2ee/servlet-api.jar"/>
+	<classpathentry kind="lib" path="board/WEB-INF/lib/spring-security-core-2.0.1.jar"/>
+	<classpathentry kind="lib" path="board/WEB-INF/lib/spring-security-core-tiger-2.0.1.jar"/>
+	<classpathentry kind="lib" path="board/WEB-INF/lib/spring-security-acl-2.0.1.jar"/>
+	<classpathentry kind="output" path="board/WEB-INF/classes"/>
+</classpath>

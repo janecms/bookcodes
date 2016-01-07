@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>Add Product</title>
+<style type="text/css">@import url(css/main.css);</style>
+</head>
+<body>
+<div id="global" style="width:330px">
+
+<h3>Add Product</h3>
+#sform ("action=Product_save")
+    #stextfield ("name=name" "label=Product Name")
+    #stextfield ("name=description" "label=Description")
+    #stextfield ("name=price" "label=Price")
+    #ssubmit ("value=Add Product")
+#end
+
+</div>
+</body>

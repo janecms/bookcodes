@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+
+    <package name="app08d" extends="struts-default">
+        <action name="Customer1">
+            <result>/jsp/Customer.jsp</result>
+        </action>
+        <action name="Customer2" class="app08d.Customer">
+            <result name="input">/jsp/Customer.jsp</result>
+            <result>/jsp/Thanks.jsp</result>
+        </action>
+        <action name="Employee1">
+            <result>/jsp/Employee.jsp</result>
+        </action>
+        <action name="Employee2" class="app08d.Employee">
+            <result name="input">/jsp/Employee.jsp</result>
+            <result>/jsp/Thanks2.jsp</result>
+        </action>
+    </package>
+
+</struts>
